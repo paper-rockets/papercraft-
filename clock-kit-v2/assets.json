@@ -1,0 +1,175 @@
+{
+  "version": 2,
+  "restDirection": "12 oclock",
+  "angleDirection": "clockwise",
+  "assets": {
+    "rim": {
+      "file": "rim.webp",
+      "width": 1254,
+      "height": 1254,
+      "alphaBounds": [
+        0,
+        45,
+        1234,
+        1254
+      ],
+      "pivotPx": [
+        626.5,
+        624.0
+      ],
+      "pivotNormalized": [
+        0.4996012759170654,
+        0.49760765550239233
+      ],
+      "tipRadiusPx": null,
+      "transparentPixelFraction": 0.662,
+      "pivotMethod": "opaque silhouette bounds center",
+      "visibleBounds": [
+        43,
+        48,
+        1210,
+        1200
+      ]
+    },
+    "face": {
+      "file": "face.webp",
+      "width": 1254,
+      "height": 1254,
+      "alphaBounds": [
+        0,
+        24,
+        1222,
+        1254
+      ],
+      "pivotPx": [
+        626.5,
+        627.5
+      ],
+      "pivotNormalized": [
+        0.4996012759170654,
+        0.5003987240829346
+      ],
+      "tipRadiusPx": null,
+      "transparentPixelFraction": 0.3102,
+      "pivotMethod": "opaque silhouette bounds center",
+      "visibleBounds": [
+        42,
+        43,
+        1211,
+        1212
+      ]
+    },
+    "hour-hand": {
+      "file": "hour-hand.webp",
+      "width": 1254,
+      "height": 1254,
+      "alphaBounds": [
+        96,
+        21,
+        1208,
+        1182
+      ],
+      "pivotPx": [
+        626.5,
+        1028.0
+      ],
+      "pivotNormalized": [
+        0.499601,
+        0.819777
+      ],
+      "tipRadiusPx": 884.0,
+      "transparentPixelFraction": 0.901,
+      "pivotMethod": "silhouette widest pivot row, visually inspected",
+      "visibleBounds": [
+        512,
+        144,
+        742,
+        1142
+      ]
+    },
+    "minute-hand": {
+      "file": "minute-hand.webp",
+      "width": 1254,
+      "height": 1254,
+      "alphaBounds": [
+        162,
+        60,
+        1057,
+        1188
+      ],
+      "pivotPx": [
+        626.0,
+        1076.0
+      ],
+      "pivotNormalized": [
+        0.499203,
+        0.858054
+      ],
+      "tipRadiusPx": 1012.0,
+      "transparentPixelFraction": 0.9296,
+      "pivotMethod": "silhouette widest pivot row, visually inspected",
+      "visibleBounds": [
+        525,
+        64,
+        728,
+        1178
+      ]
+    },
+    "second-hand": {
+      "file": "second-hand.webp",
+      "width": 1254,
+      "height": 1254,
+      "alphaBounds": [
+        146,
+        66,
+        1136,
+        1190
+      ],
+      "pivotPx": [
+        627.5,
+        935.5
+      ],
+      "pivotNormalized": [
+        0.500399,
+        0.746013
+      ],
+      "tipRadiusPx": 864.5,
+      "transparentPixelFraction": 0.9516,
+      "pivotMethod": "silhouette widest pivot row, visually inspected",
+      "visibleBounds": [
+        553,
+        71,
+        703,
+        1183
+      ]
+    },
+    "center-pin": {
+      "file": "center-pin.webp",
+      "width": 1254,
+      "height": 1254,
+      "alphaBounds": [
+        0,
+        48,
+        1214,
+        1205
+      ],
+      "pivotPx": [
+        627.5,
+        623.5
+      ],
+      "pivotNormalized": [
+        0.5003987240829346,
+        0.4972089314194577
+      ],
+      "tipRadiusPx": null,
+      "transparentPixelFraction": 0.6432,
+      "pivotMethod": "opaque silhouette bounds center",
+      "visibleBounds": [
+        208,
+        206,
+        1047,
+        1041
+      ]
+    }
+  }
+}

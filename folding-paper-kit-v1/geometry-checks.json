@@ -1,0 +1,16 @@
+[
+  {
+    "kind": "prism",
+    "closedVertices": 6,
+    "closedEdges": 9,
+    "everyEdgeSharedTwice": true,
+    "glueTabs": 5
+  },
+  {
+    "kind": "pyramid",
+    "closedVertices": 4,
+    "closedEdges": 6,
+    "everyEdgeSharedTwice": true,
+    "glueTabs": 3
+  }
+]

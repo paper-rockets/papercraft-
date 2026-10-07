@@ -1,0 +1,170 @@
+{
+  "version": 2,
+  "assets": {
+    "blank-tile-blue": {
+      "file": "blank-tile-blue.webp",
+      "width": 1254,
+      "height": 1254,
+      "visibleBounds": [
+        118,
+        129,
+        1138,
+        1140
+      ]
+    },
+    "blank-tile-purple": {
+      "file": "blank-tile-purple.webp",
+      "width": 1254,
+      "height": 1254,
+      "visibleBounds": [
+        121,
+        136,
+        1136,
+        1120
+      ]
+    },
+    "blank-tile-red": {
+      "file": "blank-tile-red.webp",
+      "width": 1254,
+      "height": 1254,
+      "visibleBounds": [
+        68,
+        73,
+        1189,
+        1186
+      ]
+    },
+    "blank-tile-teal": {
+      "file": "blank-tile-teal.webp",
+      "width": 1254,
+      "height": 1254,
+      "visibleBounds": [
+        116,
+        132,
+        1139,
+        1123
+      ]
+    },
+    "blank-tile-yellow": {
+      "file": "blank-tile-yellow.webp",
+      "width": 1254,
+      "height": 1254,
+      "visibleBounds": [
+        107,
+        114,
+        1149,
+        1141
+      ]
+    },
+    "digit-0": {
+      "file": "digit-0.webp",
+      "width": 1254,
+      "height": 1254,
+      "visibleBounds": [
+        261,
+        122,
+        1023,
+        1159
+      ]
+    },
+    "digit-1": {
+      "file": "digit-1.webp",
+      "width": 1254,
+      "height": 1254,
+      "visibleBounds": [
+        335,
+        112,
+        985,
+        1146
+      ]
+    },
+    "digit-2": {
+      "file": "digit-2.webp",
+      "width": 1254,
+      "height": 1254,
+      "visibleBounds": [
+        279,
+        146,
+        998,
+        1135
+      ]
+    },
+    "digit-3": {
+      "file": "digit-3.webp",
+      "width": 1254,
+      "height": 1254,
+      "visibleBounds": [
+        290,
+        149,
+        996,
+        1150
+      ]
+    },
+    "digit-4": {
+      "file": "digit-4.webp",
+      "width": 1254,
+      "height": 1254,
+      "visibleBounds": [
+        239,
+        108,
+        1036,
+        1185
+      ]
+    },
+    "digit-5": {
+      "file": "digit-5.webp",
+      "width": 1254,
+      "height": 1254,
+      "visibleBounds": [
+        276,
+        109,
+        984,
+        1174
+      ]
+    },
+    "digit-6": {
+      "file": "digit-6.webp",
+      "width": 1254,
+      "height": 1254,
+      "visibleBounds": [
+        294,
+        125,
+        979,
+        1156
+      ]
+    },
+    "digit-7": {
+      "file": "digit-7.webp",
+      "width": 1254,
+      "height": 1254,
+      "visibleBounds": [
+        249,
+        145,
+        1016,
+        1159
+      ]
+    },
+    "digit-8": {
+      "file": "digit-8.webp",
+      "width": 1254,
+      "height": 1254,
+      "visibleBounds": [
+        281,
+        133,
+        974,
+        1159
+      ]
+    },
+    "digit-9": {
+      "file": "digit-9.webp",
+      "width": 1254,
+      "height": 1254,
+      "visibleBounds": [
+        287,
+        102,
+        1014,
+        1159
+      ]
+    }
+  }
+}

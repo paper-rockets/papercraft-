@@ -1,0 +1,23 @@
+import {tenRod,popupCard} from './demos.js';
+import {foldingNet,SHAPES} from './nets.js';
+import {attachPaperSound,setPaperSound,paperSoundOn} from './sound.js';
+const engines=[foldingNet(document.querySelector('#cube'),'cube'),tenRod(document.querySelector('#rod')),popupCard(document.querySelector('#popup'))];
+engines.forEach(e=>{e.onChange=()=>{if(!e.transitions.size){e.canvas.dataset.renderCount=String(e.frames);e.canvas.dataset.state=JSON.stringify(e.state);e.canvas.dataset.camera=JSON.stringify(e.camera);e.canvas.dataset.textures=String(e.textures.size);}};});
+const ids=['cube','rod','popup'],labels=[['Fold cube','Unfold cube'],['Split into 10','Snap into a rod'],['Open card','Close card']];
+const sentences=[['Six faces, one connected sheet.','Six faces folded into a cube.'],['One ten is still ten ones.','Ten separate ones. Still ten.'],['Three layers rise from the page.','Open, with three paper layers.']];
+const diag=e=>{e.onChange=()=>{if(!e.transitions.size){e.canvas.dataset.renderCount=String(e.frames);e.canvas.dataset.state=JSON.stringify(e.state);e.canvas.dataset.camera=JSON.stringify(e.camera);e.canvas.dataset.textures=String(e.textures.size);}};};
+const wire=(engine,i)=>{const update=()=>{const target=engine.target===1?1:0;const button=document.querySelector(`#${ids[i]}-action`);button.textContent=labels[i][target];document.querySelector(`#${ids[i]}-state`).textContent=sentences[i][target];button.setAttribute('aria-pressed',String(Boolean(target)));};const toggle=engine.toggle;engine.toggle=()=>{toggle();update();};engine.onTap=engine.toggle;engine.update=update;};
+engines.forEach(wire);engines.forEach(attachPaperSound);ids.forEach((id,i)=>document.querySelector(`#${id}-action`).addEventListener('click',()=>engines[i].toggle()));
+// Shape picker: swap the net on the same canvas (old one is cleaned up first).
+const netWords=shape=>{const s=SHAPES[shape];labels[0]=[`Fold ${s.name.toLowerCase()}`,`Unfold ${s.name.toLowerCase()}`];sentences[0]=[`${s.faces} faces, one connected sheet. Drag a side to fold it.`,`${s.faces} faces folded into a ${s.name.toLowerCase()}.`];document.querySelector('#cube-title').textContent=`A net becomes a ${s.name.toLowerCase()}`;};
+netWords('cube');engines[0].update();
+document.querySelectorAll('.shape-picker button').forEach(b=>b.addEventListener('click',()=>{const shape=b.dataset.shape;if(engines[0].shape===shape)return;engines[0].destroy();engines[0]=foldingNet(document.querySelector('#cube'),shape);attachPaperSound(engines[0]);diag(engines[0]);netWords(shape);wire(engines[0],0);engines[0].update();document.querySelectorAll('.shape-picker button').forEach(x=>x.setAttribute('aria-pressed',String(x===b)));}));
+document.querySelector('#reset').addEventListener('click',()=>engines.forEach(e=>e.reset()));
+const motionButton=document.querySelector('#motion'),status=document.querySelector('#motion-status');
+motionButton.addEventListener('click',async()=>{motionButton.disabled=true;const enable=motionButton.getAttribute('aria-pressed')!=='true';const results=[];for(const engine of engines)results.push(await engine.setMotion(enable));const active=results.every(r=>r==='on');if(!active)for(const engine of engines)await engine.setMotion(false);motionButton.setAttribute('aria-pressed',String(active));motionButton.textContent=`Tablet tilt: ${active?'on':'off'}`;status.textContent=active?'Tilt gently to turn the paper. Tap again to switch tilt off.':results.includes('reduced-motion')?'Tablet tilt stays off while reduced motion is enabled.':results.includes('denied')?'Motion permission was not granted. Drag still works.':enable?'If motion sensors are available, your browser may require HTTPS. Drag still works.':'Tablet tilt is off. Drag to turn the paper.';motionButton.disabled=false;});
+const reduce=matchMedia('(prefers-reduced-motion: reduce)');reduce.addEventListener('change',()=>{if(reduce.matches){motionButton.setAttribute('aria-pressed','false');motionButton.textContent='Tablet tilt: off';}});
+window.addEventListener('pagehide',()=>engines.forEach(e=>e.destroy()),{once:true});
+// Read-only diagnostics for integration checks; no storage or sound controls touched.
+window.paper3dLab={engines,snapshot:()=>engines.map(e=>({cards:e.cards.length,state:{...e.state},camera:{...e.camera},frames:e.frames,pending:e.raf,hidden:e.hidden,motion:e.motion,textures:e.textures.size}))};
+// Sound on/off (soft paper sounds made in the browser; on by default, wakes on the first tap).
+const soundButton=document.querySelector('#sound');soundButton.addEventListener('click',()=>{const on=!paperSoundOn();setPaperSound(on);soundButton.setAttribute('aria-pressed',String(on));soundButton.textContent=`Sound: ${on?'on':'off'}`;});

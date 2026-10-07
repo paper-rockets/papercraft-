@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Capybara Puppet Parts — Contact Sheet & Gallery</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: Georgia, serif;
+      background: #f6efe2;
+      color: #372d23;
+      padding: 24px 16px 80px;
+    }
+    .header {
+      max-width: 1200px;
+      margin: 0 auto 24px;
+      background: #faf6ef;
+      border: 2px solid #d7cbb9;
+      border-radius: 12px;
+      padding: 20px 24px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+    }
+    h1 {
+      font-size: 28px;
+      color: #1f6b63;
+      margin-bottom: 6px;
+    }
+    .sub {
+      font-family: system-ui, sans-serif;
+      font-size: 14px;
+      color: #6e645a;
+      line-height: 1.5;
+    }
+    .links-bar {
+      margin-top: 14px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .btn {
+      display: inline-block;
+      font-family: system-ui, sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      color: #1f6b63;
+      background: #fff;
+      border: 1.5px solid #1f6b63;
+      border-radius: 6px;
+      padding: 8px 14px;
+      text-decoration: none;
+      transition: all 0.15s ease;
+    }
+    .btn:hover {
+      background: #1f6b63;
+      color: #fff;
+    }
+    .btn.active {
+      background: #1f6b63;
+      color: #fff;
+    }
+    .section {
+      max-width: 1200px;
+      margin: 0 auto 36px;
+    }
+    .sec-title {
+      font-size: 20px;
+      color: #2d261e;
+      border-bottom: 2px solid #d7cbb9;
+      padding-bottom: 6px;
+      margin-bottom: 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+    .sec-title span {
+      font-family: system-ui, sans-serif;
+      font-size: 13px;
+      color: #7a6e60;
+      font-weight: normal;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+      gap: 12px;
+    }
+    .grid-large {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 16px;
+    }
+    .card {
+      background: #fff;
+      border: 1px solid #d7cbb9;
+      border-radius: 8px;
+      padding: 10px 8px 8px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+      cursor: pointer;
+      transition: transform 0.12s, box-shadow 0.12s;
+    }
+    .card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 14px rgba(0,0,0,0.08);
+      border-color: #1f6b63;
+    }
+    .card-img-wrap {
+      width: 100%;
+      height: 110px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 8px;
+      background: #faf6f0;
+      border-radius: 6px;
+      overflow: hidden;
+      padding: 4px;
+    }
+    .card-img-wrap.large {
+      height: 200px;
+    }
+    .card img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
+    .card-label {
+      font-family: system-ui, sans-serif;
+      font-size: 11px;
+      color: #6e645a;
+      word-break: break-all;
+      line-height: 1.3;
+    }
+    .card-title {
+      font-size: 15px;
+      font-weight: bold;
+      color: #1f6b63;
+      margin-bottom: 4px;
+    }
+    /* Modal preview */
+    .modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(30, 25, 20, 0.75);
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .modal.open {
+      display: flex;
+    }
+    .modal-content {
+      background: #fff;
+      border-radius: 12px;
+      max-width: 900px;
+      width: 100%;
+      max-height: 90vh;
+      overflow-y: auto;
+      padding: 24px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      position: relative;
+    }
+    .modal-close {
+      position: absolute;
+      top: 14px;
+      right: 18px;
+      font-size: 26px;
+      cursor: pointer;
+      color: #6e645a;
+    }
+    .modal img {
+      max-width: 100%;
+      max-height: 60vh;
+      object-fit: contain;
+      background: #f6efe2;
+      border-radius: 8px;
+      padding: 16px;
+      margin: 16px 0;
+      border: 1px solid #d7cbb9;
+    }
+    .modal-name {
+      font-family: monospace;
+      font-size: 14px;
+      color: #1f6b63;
+      word-break: break-all;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <h1>Capybara Puppet Parts — Contact Sheet & Gallery</h1>
+    <div class="sub">
+      All broken down capybara parts in one interactive overview.<br>
+      • <strong>67 Transparent Cutout Pieces:</strong> <code>public/cutouts/capybara-puppet/</code><br>
+      • <strong>6 Master Sheets & Specs:</strong> <code>public/capy-puppet/</code>
+    </div>
+    <div class="links-bar">
+      <a class="btn" href="#section-cutouts">Jump to 67 Cutouts</a>
+      <a class="btn" href="#section-masters">Jump to 6 Master Sheets</a>
+      <a class="btn" href="/papercraft-/capy-cutout-parts-contact.jpg" target="_blank">Open High-Res Cutouts JPG (2400x2155)</a>
+      <a class="btn" href="/papercraft-/capy-master-sheets-contact.jpg" target="_blank">Open High-Res Master Sheets JPG (2200x1800)</a>
+    </div>
+  </div>
+
+  <div id="section-masters" class="section">
+    <div class="sec-title">
+      1. Master Parts Sheets (6 Sheets)
+      <span>Source: public/capy-puppet/</span>
+    </div>
+    <div class="grid-large">
+
+      <div class="card" onclick="openModal('/papercraft-/capy-puppet/capy-design.webp', 'capy-design.webp')">
+        <div class="card-img-wrap large">
+          <img src="/papercraft-/capy-puppet/capy-design.webp" alt="capy-design.webp" loading="lazy">
+        </div>
+        <div class="card-title">Design Master</div>
+        <div class="card-label">Approved master round capybara with open dot eyes.</div>
+        <div class="card-label" style="margin-top:4px; font-weight:600; color:#1f6b63;">capy-design.webp</div>
+      </div>
+
+      <div class="card" onclick="openModal('/papercraft-/capy-puppet/capy-front-parts.webp', 'capy-front-parts.webp')">
+        <div class="card-img-wrap large">
+          <img src="/papercraft-/capy-puppet/capy-front-parts.webp" alt="capy-front-parts.webp" loading="lazy">
+        </div>
+        <div class="card-title">Front Sitting Parts</div>
+        <div class="card-label">Body, ears, muzzle, belly patch, paws, feet, and cheeks.</div>
+        <div class="card-label" style="margin-top:4px; font-weight:600; color:#1f6b63;">capy-front-parts.webp</div>
+      </div>
+
+      <div class="card" onclick="openModal('/papercraft-/capy-puppet/capy-side-parts.webp', 'capy-side-parts.webp')">
+        <div class="card-img-wrap large">
+          <img src="/papercraft-/capy-puppet/capy-side-parts.webp" alt="capy-side-parts.webp" loading="lazy">
+        </div>
+        <div class="card-title">Side Sitting Parts</div>
+        <div class="card-label">Left-facing sitting body, near/far ears, muzzle, belly, paws, feet.</div>
+        <div class="card-label" style="margin-top:4px; font-weight:600; color:#1f6b63;">capy-side-parts.webp</div>
+      </div>
+
+      <div class="card" onclick="openModal('/papercraft-/capy-puppet/capy-stand-parts.webp', 'capy-stand-parts.webp')">
+        <div class="card-img-wrap large">
+          <img src="/papercraft-/capy-puppet/capy-stand-parts.webp" alt="capy-stand-parts.webp" loading="lazy">
+        </div>
+        <div class="card-title">Side Standing Parts</div>
+        <div class="card-label">Left-facing standing loaf body, ears, muzzle, underside, near/far legs.</div>
+        <div class="card-label" style="margin-top:4px; font-weight:600; color:#1f6b63;">capy-stand-parts.webp</div>
+      </div>
+
+      <div class="card" onclick="openModal('/papercraft-/capy-puppet/capy-swaps.webp', 'capy-swaps.webp')">
+        <div class="card-img-wrap large">
+          <img src="/papercraft-/capy-puppet/capy-swaps.webp" alt="capy-swaps.webp" loading="lazy">
+        </div>
+        <div class="card-title">Facial Swaps Sheet</div>
+        <div class="card-label">5 eye pairs/singles and 6 mouth shapes for front and side views.</div>
+        <div class="card-label" style="margin-top:4px; font-weight:600; color:#1f6b63;">capy-swaps.webp</div>
+      </div>
+
+      <div class="card" onclick="openModal('/papercraft-/capy-puppet/capy-poses.webp', 'capy-poses.webp')">
+        <div class="card-img-wrap large">
+          <img src="/papercraft-/capy-puppet/capy-poses.webp" alt="capy-poses.webp" loading="lazy">
+        </div>
+        <div class="card-title">Full Poses Sheet</div>
+        <div class="card-label">Waving, cheering, card, jump, sleeping, thinking.</div>
+        <div class="card-label" style="margin-top:4px; font-weight:600; color:#1f6b63;">capy-poses.webp</div>
+      </div>
+
+    </div>
+  </div>
+
+  <div id="section-cutouts" class="section">
+    <div class="sec-title">
+      2. Puppet Bodies (9 Cutout Pieces)
+      <span>Front, sitting side, and standing loaf postures across variants A, B, and C</span>
+    </div>
+    <div class="grid">
+
+      <div class="card" onclick="openModal('/cutouts/capybara-puppet/puppet-body-a-4526db94-01.webp', 'puppet-body-a-4526db94-01.webp')">
+        <div class="card-img-wrap"><img src="/cutouts/capybara-puppet/puppet-body-a-4526db94-01.webp" alt="puppet-body-a-4526db94-01.webp" loading="lazy"></div>
+        <div class="card-label">puppet-body-a-4526db94-01.webp</div>
+      </div>
+
+      <div class="card" onclick="openModal('/cutouts/capybara-puppet/puppet-body-a-4526db94-02.webp', 'puppet-body-a-4526db94-02.webp')">
+        <div class="card-img-wrap"><img src="/cutouts/capybara-puppet/puppet-body-a-4526db94-02.webp" alt="puppet-body-a-4526db94-02.webp" loading="lazy"></div>
+        <div class="card-label">puppet-body-a-4526db94-02.webp</div>
+      </div>
+
+      <div class="card" onclick="openModal('/cutouts/capybara-puppet/puppet-body-a-4526db94-03.webp', 'puppet-body-a-4526db94-03.webp')">
+        <div class="card-img-wrap"><img src="/cutouts/capybara-puppet/puppet-body-a-4526db94-03.webp" alt="puppet-body-a-4526db94-03.webp" loading="lazy"></div>
+        <div class="card-label">puppet-body-a-4526db94-03.webp</div>
+      </div>
+
+      <div class="card" onclick="openModal('/cutouts/capybara-puppet/puppet-body-b-916a87a4-01.webp', 'puppet-body-b-916a87a4-01.webp')">
+        <div class="card-img-wrap"><img src="/cutouts/capybara-puppet/puppet-body-b-916a87a4-01.webp" alt="puppet-body-b-916a87a4-01.webp" loading="lazy"></div>
+        <div class="card-label">puppet-body-b-916a87a4-01.webp</div>
+      </div>
+
+      <div class="card" onclick="openModal('/cutouts/capybara-puppet/puppet-body-b-916a87a4-02.webp', 'puppet-body-b-916a87a4-02.webp')">
+        <div class="card-img-wrap"><img src="/cutouts/capybara-puppet/puppet-body-b-916a87a4-02.webp" alt="puppet-body-b-916a87a4-02.webp" loading="lazy"></div>
+        <div class="card-label">puppet-body-b-916a87a4-02.webp</div>
+      </div>
+
+      <div class="card" onclick="openModal('/cutouts/capybara-puppet/puppet-body-b-916a87a4-03.webp', 'puppet-body-b-916a87a4-03.webp')">
+        <div class="card-img-wrap"><img src="/cutouts/capybara-puppet/puppet-body-b-916a87a4-03.webp" alt="puppet-body-b-916a87a4-03.webp" loading="lazy"></div>
+        <div class="card-label">puppet-body-b-916a87a4-03.webp</div>
+      </div>
+
+      <div class="card" onclick="openModal('/cutouts/capybara-puppet/puppet-body-c-e577def0-01.webp', 'puppet-body-c-e577def0-01.webp')">
+        <div class="card-img-wrap"><img src="/cutouts/capybara-puppet/puppet-body-c-e577def0-01.webp" alt="puppet-body-c-e577def0-01.webp" loading="lazy"></div>
+        <div class="card-label">puppet-body-c-e577def0-01.webp</div>
+      </div>
+
+      <div class="card" onclick="openModal('/cutouts/capybara-puppet/puppet-body-c-e577def0-02.webp', 'puppet-body-c-e577def0-02.webp')">
+        <div class="card-img-wrap"><img src="/cutouts/capybara-puppet/puppet-body-c-e577def0-02.webp" alt="puppet-body-c-e577def0-02.webp" loading="lazy"></div>
+        <div class="card-label">puppet-body-c-e577def0-02.webp</div>
+      </div>
+
+      <div class="card" onclick="openModal('/cutouts/capybara-puppet/puppet-body-c-e577def0-03.webp', 'puppet-body-c-e577def0-03.webp')">
+        <div class="card-img-wrap"><img src="/cutouts/capybara-puppet/puppet-body-c-e577def0-03.webp" alt="puppet-body-c-e577def0-03.webp" loading="lazy"></div>
+        <div class="card-label">puppet-body-c-e577def0-03.webp</div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="sec-title">
+      3. Limbs & Attachments — Brown Set (10 Pieces)
+      <span>Paws, ears, feet, and tail with tuck tabs</span>
+    </div>
+    <div class="grid">
+
+      <div class="card" onclick="openModal('/cutouts/capybara-puppet/puppet-parts-brown-05bf9436-01.webp', 'puppet-parts-brown-05bf9436-01.webp')">
+        <div class="card-img-wrap"><img src="/cutouts/capybara-puppet/puppet-parts-brown-05bf9436-01.webp" alt="puppet-parts-brown-05bf9436-01.webp" loading="lazy"></div>
+        <div class="card-label">puppet-parts-brown-05bf9436-01.webp</div>
+      </div>
+
+      <div class="card" onclick="openModal('/cutouts/capybara-puppet/puppet-parts-brown-05bf9436-02.webp', 'puppet-parts-brown-05bf9436-02.webp')">
+        <div class="card-img-wrap"><img src="/cutouts/capybara-puppet/puppet-parts-brown-05bf9436-02.webp" alt="puppet-parts-brown-05bf9436-02.webp" loading="lazy"></div>
+        <div class="card-label">puppet-parts-brown-05bf9436-02.webp</div>
+      </div>
+
+      <div class="card" onclick="openModal('/cutouts/capybara-puppet/puppet-parts-brown-05bf9436-03.webp', 'puppet-parts-brown-05bf9436-03.webp')">
+        <div class="card-img-wrap"><img src="/cutouts/capybara-puppet/puppet-parts-brown-05bf9436-03.webp" alt="puppet-parts-brown-05bf9436-03.webp" loading="lazy"></div>
+        <div class="card-label">puppet-parts-brown-05bf9436-03.webp</div>
+      </div>
+
+      <div class="card" onclick="openModal('/cutouts/capybara-puppet/puppet-parts-brown-05bf9436-04.webp', 'puppet-parts-brown-05bf9436-04.webp')">
+        <div class="card-img-wrap"><img src="/cutouts/capybara-puppet/puppet-parts-brown-05bf9436-04.webp" alt="puppet-parts-brown-05bf9436-04.webp" loading="lazy"></div>
+        <div class="card-label">puppet-parts-brown-05bf9436-04.webp</div>
+      </div>
+
+      <div class="card" onclick="openModal('/cutouts/capybara-puppet/puppet-parts-brown-05bf9436-05.webp', 'puppet-parts-brown-05bf9436-05.webp')">
+        <div class="card-img-wrap"><img src="/cutouts/capybara-puppet/puppet-parts-brown-05bf9436-05.webp" alt="puppet-parts-brown-05bf9436-05.webp" loading="lazy"></div>
+        <div class="card-label">puppet-parts-brown-05bf9436-05.webp</div>
+      </div>
+
+      <div class="card" onclick="openModal('/cutouts/capybara-puppet/puppet-parts-brown-05bf9436-06.webp', 'puppet-parts-brown-05bf9436-06.webp')">
+        <div class="card-img-wrap"><img src="/cutouts/capybara-puppet/puppet-parts-brown-05bf9436-06.webp" alt="puppet-parts-brown-05bf9436-06.webp" loading="lazy"></div>
+        <div class="card-label">puppet-parts-brown-05bf9436-06.webp</div>
+      </div>
+
+      <div class="card" onclick="openModal('/cutouts/capybara-puppet/puppet-parts-brown-05bf9436-07.webp', 'puppet-parts-brown-05bf9436-07.webp')">
+        <div class="card-img-wrap"><img src="/cutouts/capybara-puppet/puppet-parts-brown-05bf9436-07.webp" alt="puppet-parts-brown-05bf9436-07.webp" loading="lazy"></div>
+        <div class="card-label">puppet-parts-brown-05bf9436-07.webp</div>
+      </div>
+
+      <div class="card" onclick="openModal('/cutouts/capybara-puppet/puppet-parts-brown-05bf9436-08.webp', 'puppet-parts-brown-05bf9436-08.webp')">
+        <div class="card-img-wrap"><img src="/cutouts/capybara-puppet/puppet-parts-brown-05bf9436-08.webp" alt="puppet-parts-brown-05bf9436-08.webp" loading="lazy"></div>
+        <div class="card-label">puppet-parts-brown-05bf9436-08.webp</div>
+      </div>
+
+      <div class="card" onclick="openModal('/cutouts/capybara-puppet/puppet-parts-brown-05bf9436-09.webp', 'puppet-parts-brown-05bf9436-09.webp')">
+        <div class="card-img-wrap"><img src="/cutouts/capybara-puppet/puppet-parts-brown-05bf9436-09.webp" alt="puppet-parts-brown-05bf9436-09.webp" loading="lazy"></div>
+        <div class="card-label">puppet-parts-brown-05bf9436-09.webp</div>
+      </div>
+
+      <div class="card" onclick="openModal('/cutouts/capybara-puppet/puppet-parts-brown-05bf9436-10.webp', 'puppet-parts-brown-05bf9436-10.webp')">
+        <div class="card-img-wrap"><img src="/cutouts/capybara-puppet/puppet-parts-brown-05bf9436-10.webp" alt="puppet-parts-brown-05bf9436-10.webp" loading="lazy"></div>
+        <div class="card-label">puppet-parts-brown-05bf9436-10.webp</div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="sec-title">
+      4. Limbs & Attachments — Round Set (11 Pieces)
+      <span>Rounded paws, ears, cheeks, and cream belly patches</span>
+    </div>
+    <div class="grid">
+
+      <div class="card" onclick="openModal('/cutouts/capybara-puppet/puppet-parts-round-74b2eb02-01.webp', 'puppet-parts-round-74b2eb02-01.webp')">
+        <div class="card-img-wrap"><img src="/cutouts/capybara-puppet/puppet-parts-round-74b2eb02-01.webp" alt="puppet-parts-round-74b2eb02-01.webp" loading="lazy"></div>
+        <div class="card-label">puppet-parts-round-74b2eb02-01.webp</div>
+      </div>
+
+      <div class="card" onclick="openModal('/cutouts/capybara-puppet/puppet-parts-round-74b2eb02-02.webp', 'puppet-parts-round-74b2eb02-02.webp')">
+        <div class="card-img-wrap"><img src="/cutouts/capybara-puppet/puppet-parts-round-74b2eb02-02.webp" alt="puppet-parts-round-74b2eb02-02.webp" loading="lazy"></div>
+        <div class="card-label">puppet-parts-round-74b2eb02-02.webp</div>
+      </div>
+
+      <div class="card" onclick="openModal('/cutouts/capybara-puppet/puppet-parts-round-74b2eb02-03.webp', 'puppet-parts-round-74b2eb02-03.webp')">
+        <div class="card-img-wrap"><img src="/cutouts/capybara-puppet/puppet-parts-round-74b2eb02-03.webp" alt="puppet-parts-round-74b2eb02-03.webp" loading="lazy"></div>
+        <div class="card-label">puppet-parts-round-74b2eb02-03.webp</div>
+      </div>
+
+      <div class="card" onclick="openModal('/cutouts/capybara-puppet/puppet-parts-round-74b2eb02-04.webp', 'puppet-parts-round-74b2eb02-04.webp')">
+        <div class="card-img-wrap"><img src="/cutouts/capybara-puppet/puppet-parts-round-74b2eb02-04.webp" alt="puppet-parts-round-74b2eb02-04.webp" loading="lazy"></div>
+        <div class="card-label">puppet-parts-round-74b2eb02-04.webp</div>
+      </div>
+
+      <div class="card" onclick="openModal('/cutouts/capybara-puppet/puppet-parts-round-74b2eb02-05.webp', 'puppet-parts-round-74b2eb02-05.webp')">
+        <div class="card-img-wrap"><img src="/cutouts/capybara-puppet/puppet-parts-round-74b2eb02-05.webp" alt="puppet-parts-round-74b2eb02-05.webp" loading="lazy"></div>
+        <div class="card-label">puppet-parts-round-74b2eb02-05.webp</div>
+      </div>
+
+      <div class="card" onclick="openModal('/cutouts/capybara-puppet/puppet-parts-round-74b2eb02-06.webp', 'puppet-parts-round-74b2eb02-06.webp')">
+        <div class="card-img-wrap"><img src="/cutouts/capybara-puppet/puppet-parts-round-74b2eb02-06.webp" alt="puppet-parts-round-74b2eb02-06.webp" loading="lazy"></div>
+        <div class="card-label">puppet-parts-round-74b2eb02-06.webp</div>
+      </div>
+
+      <div class="card" onclick="openModal('/cutouts/capybara-puppet/puppet-parts-round-74b2eb02-07.webp', 'puppet-parts-round-74b2eb02-07.webp')">
+        <div class="card-img-wrap"><img src="/cutouts/capybara-puppet/puppet-parts-round-74b2eb02-07.webp" alt="puppet-parts-round-74b2eb02-07.webp" loading="lazy"></div>
+        <div class="card-label">puppet-parts-round-74b2eb02-07.webp</div>
+      </div>
+
+      <div class="card" onclick="openModal('/cutouts/capybara-puppet/puppet-parts-round-74b2eb02-08.webp', 'puppet-parts-round-74b2eb02-08.webp')">
+        <div class="card-img-wrap"><img src="/cutouts/capybara-puppet/puppet-parts-round-74b2eb02-08.webp" alt="puppet-parts-round-74b2eb02-08.webp" loading="lazy"></div>
+        <div class="card-label">puppet-parts-round-74b2eb02-08.webp</div>
+      </div>
+
+      <div class="card" onclick="openModal('/cutouts/capybara-puppet/puppet-parts-round-74b2eb02-09.webp', 'puppet-parts-round-74b2eb02-09.webp')">
+        <div class="card-img-wrap"><img src="/cutouts/capybara-puppet/puppet-parts-round-74b2eb02-09.webp" alt="puppet-parts-round-74b2eb02-09.webp" loading="lazy"></div>
+        <div class="card-label">puppet-parts-round-74b2eb02-09.webp</div>
+      </div>
+
+      <div class="card" onclick="openModal('/cutouts/capybara-puppet/puppet-parts-round-74b2eb02-10.webp', 'puppet-parts-round-74b2eb02-10.webp')">
+        <div class="card-img-wrap"><img src="/cutouts/capybara-puppet/puppet-parts-round-74b2eb02-10.webp" alt="puppet-parts-round-74b2eb02-10.webp" loading="lazy"></div>
+        <div class="card-label">puppet-parts-round-74b2eb02-10.webp</div>
+      </div>
+
+      <div class="card" onclick="openModal('/cutouts/capybara-puppet/puppet-parts-round-74b2eb02-11.webp', 'puppet-parts-round-74b2eb02-11.webp')">
+        <div class="card-img-wrap"><img src="/cutouts/capybara-puppet/puppet-parts-round-74b2eb02-11.webp" alt="puppet-parts-round-74b2eb02-11.webp" loading="lazy"></div>
+        <div class="card-label">puppet-parts-round-74b2eb02-11.webp</div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="sec-title">
+      5. Limbs & Attachments — Stand Set (10 Pieces)
+      <span>Near and far legs for standing/walking posture</span>
+    </div>
+    <div class="grid">
+
+      <div class="card" onclick="openModal('/cutouts/capybara-puppet/puppet-parts-stand-b2ccc2e4-01.webp', 'puppet-parts-stand-b2ccc2e4-01.webp')">
+        <div class="card-img-wrap"><img src="/cutouts/capybara-puppet/puppet-parts-stand-b2ccc2e4-01.webp" alt="puppet-parts-stand-b2ccc2e4-01.webp" loading="lazy"></div>
+        <div class="card-label">puppet-parts-stand-b2ccc2e4-01.webp</div>
+      </div>
+
+      <div class="card" onclick="openModal('/cutouts/capybara-puppet/puppet-parts-stand-b2ccc2e4-02.webp', 'puppet-parts-stand-b2ccc2e4-02.webp')">
+        <div class="card-img-wrap"><img src="/cutouts/capybara-puppet/puppet-parts-stand-b2ccc2e4-02.webp" alt="puppet-parts-stand-b2ccc2e4-02.webp" loading="lazy"></div>
+        <div class="card-label">puppet-parts-stand-b2ccc2e4-02.webp</div>
+      </div>
+
+      <div class="card" onclick="openModal('/cutouts/capybara-puppet/puppet-parts-stand-b2ccc2e4-03.webp', 'puppet-parts-stand-b2ccc2e4-03.webp')">
+        <div class="card-img-wrap"><img src="/cutouts/capybara-puppet/puppet-parts-stand-b2ccc2e4-03.webp" alt="puppet-parts-stand-b2ccc2e4-03.webp" loading="lazy"></div>
+        <div class="card-label">puppet-parts-stand-b2ccc2e4-03.webp</div>
+      </div>
+
+      <div class="card" onclick="openModal('/cutouts/capybara-puppet/puppet-parts-stand-b2ccc2e4-04.webp', 'puppet-parts-stand-b2ccc2e4-04.webp')">
+        <div class="card-img-wrap"><img src="/cutouts/capybara-puppet/puppet-parts-stand-b2ccc2e4-04.webp" alt="puppet-parts-stand-b2ccc2e4-04.webp" loading="lazy"></div>
+        <div class="card-label">puppet-parts-stand-b2ccc2e4-04.webp</div>
+      </div>
+
+      <div class="card" onclick="openModal('/cutouts/capybara-puppet/puppet-parts-stand-b2ccc2e4-05.webp', 'puppet-parts-stand-b2ccc2e4-05.webp')">
+        <div class="card-img-wrap"><img src="/cutouts/capybara-puppet/puppet-parts-stand-b2ccc2e4-05.webp" alt="puppet-parts-stand-b2ccc2e4-05.webp" loading="lazy"></div>
+        <div class="card-label">puppet-parts-stand-b2ccc2e4-05.webp</div>
+      </div>
+
+      <div class="card" onclick="openModal('/cutouts/capybara-puppet/puppet-parts-stand-b2ccc2e4-06.webp', 'puppet-parts-stand-b2ccc2e4-06.webp')">
+        <div class="card-img-wrap"><img src="/cutouts/capybara-puppet/puppet-parts-stand-b2ccc2e4-06.webp" alt="puppet-parts-stand-b2ccc2e4-06.webp" loading="lazy"></div>
+        <div class="card-label">puppet-parts-stand-b2ccc2e4-06.webp</div>
+      </div>
+
+      <div class="card" onclick="openModal('/cutouts/capybara-puppet/puppet-parts-stand-b2ccc2e4-07.webp', 'puppet-parts-stand-b2ccc2e4-07.webp')">
+        <div class="card-img-wrap"><img src="/cutouts/capybara-puppet/puppet-parts-stand-b2ccc2e4-07.webp" alt="puppet-parts-stand-b2ccc2e4-07.webp" loading="lazy"></div>
+        <div class="card-label">puppet-parts-stand-b2ccc2e4-07.webp</div>
+      </div>
+
+      <div class="card" onclick="openModal('/cutouts/capybara-puppet/puppet-parts-stand-b2ccc2e4-08.webp', 'puppet-parts-stand-b2ccc2e4-08.webp')">
+        <div class="card-img-wrap"><img src="/cutouts/capybara-puppet/puppet-parts-stand-b2ccc2e4-08.webp" alt="puppet-parts-stand-b2ccc2e4-08.webp" loading="lazy"></div>
+        <div class="card-label">puppet-parts-stand-b2ccc2e4-08.webp</div>
+      </div>
+
+      <div class="card" onclick="openModal('/cutouts/capybara-puppet/puppet-parts-stand-b2ccc2e4-09.webp', 'puppet-parts-stand-b2ccc2e4-09.webp')">
+        <div class="card-img-wrap"><img src="/cutouts/capybara-puppet/puppet-parts-stand-b2ccc2e4-09.webp" alt="puppet-parts-stand-b2ccc2e4-09.webp" loading="lazy"></div>
+        <div class="card-label">puppet-parts-stand-b2ccc2e4-09.webp</div>
+      </div>
+
+      <div class="card" onclick="openModal('/cutouts/capybara-puppet/puppet-parts-stand-b2ccc2e4-10.webp', 'puppet-parts-stand-b2ccc2e4-10.webp')">
+        <div class="card-img-wrap"><img src="/cutouts/capybara-puppet/puppet-parts-stand-b2ccc2e4-10.webp" alt="puppet-parts-stand-b2ccc2e4-10.webp" loading="lazy"></div>
+        <div class="card-label">puppet-parts-stand-b2ccc2e4-10.webp</div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="sec-title">
+      6. Facial Expressions & Swaps (27 Pieces)
+      <span>Eyes (calm, open, squint, wide, sleepy) and mouths (smiles, open, laughing grin, 'o' shape)</span>
+    </div>
+    <div class="grid">
+
+      <div class="card" onclick="openModal('/cutouts/capybara-puppet/puppet-face-swap-6b9493d0-01.webp', 'puppet-face-swap-6b9493d0-01.webp')">
+        <div class="card-img-wrap"><img src="/cutouts/capybara-puppet/puppet-face-swap-6b9493d0-01.webp" alt="puppet-face-swap-6b9493d0-01.webp" loading="lazy" style="transform: scale(1.4);"></div>
+        <div class="card-label">puppet-face-swap-6b9493d0-01.webp</div>
+      </div>
+
+      <div class="card" onclick="openModal('/cutouts/capybara-puppet/puppet-face-swap-6b9493d0-02.webp', 'puppet-face-swap-6b9493d0-02.webp')">
+        <div class="card-img-wrap"><img src="/cutouts/capybara-puppet/puppet-face-swap-6b9493d0-02.webp" alt="puppet-face-swap-6b9493d0-02.webp" loading="lazy" style="transform: scale(1.4);"></div>
+        <div class="card-label">puppet-face-swap-6b9493d0-02.webp</div>
+      </div>
+
+      <div class="card" onclick="openModal('/cutouts/capybara-puppet/puppet-face-swap-6b9493d0-03.webp', 'puppet-face-swap-6b9493d0-03.webp')">
+        <div class="card-img-wrap"><img src="/cutouts/capybara-puppet/puppet-face-swap-6b9493d0-03.webp" alt="puppet-face-swap-6b9493d0-03.webp" loading="lazy" style="transform: scale(1.4);"></div>
+        <div class="card-label">puppet-face-swap-6b9493d0-03.webp</div>
+      </div>
+
+      <div class="card" onclick="openModal('/cutouts/capybara-puppet/puppet-face-swap-6b9493d0-04.webp', 'puppet-face-swap-6b9493d0-04.webp')">
+        <div class="card-img-wrap"><img src="/cutouts/capybara-puppet/puppet-face-swap-6b9493d0-04.webp" alt="puppet-face-swap-6b9493d0-04.webp" loading="lazy" style="transform: scale(1.4);"></div>
+        <div class="card-label">puppet-face-swap-6b9493d0-04.webp</div>
+      </div>
+
+      <div class="card" onclick="openModal('/cutouts/capybara-puppet/puppet-face-swap-6b9493d0-05.webp', 'puppet-face-swap-6b9493d0-05.webp')">
+        <div class="card-img-wrap"><img src="/cutouts/capybara-puppet/puppet-face-swap-6b9493d0-05.webp" alt="puppet-face-swap-6b9493d0-05.webp" loading="lazy" style="transform: scale(1.4);"></div>
+        <div class="card-label">puppet-face-swap-6b9493d0-05.webp</div>
+      </div>
+
+      <div class="card" onclick="openModal('/cutouts/capybara-puppet/puppet-face-swap-6b9493d0-06.webp', 'puppet-face-swap-6b9493d0-06.webp')">
+        <div class="card-img-wrap"><img src="/cutouts/capybara-puppet/puppet-face-swap-6b9493d0-06.webp" alt="puppet-face-swap-6b9493d0-06.webp" loading="lazy" style="transform: scale(1.4);"></div>
+        <div class="card-label">puppet-face-swap-6b9493d0-06.webp</div>
+      </div>
+
+      <div class="card" onclick="openModal('/cutouts/capybara-puppet/puppet-face-swap-6b9493d0-07.webp', 'puppet-face-swap-6b9493d0-07.webp')">
+        <div class="card-img-wrap"><img src="/cutouts/capybara-puppet/puppet-face-swap-6b9493d0-07.webp" alt="puppet-face-swap-6b9493d0-07.webp" loading="lazy" style="transform: scale(1.4);"></div>
+        <div class="card-label">puppet-face-swap-6b9493d0-07.webp</div>
+      </div>
+
+      <div class="card" onclick="openModal('/cutouts/capybara-puppet/puppet-face-swap-6b9493d0-08.webp', 'puppet-face-swap-6b9493d0-08.webp')">
+        <div class="card-img-wrap"><img src="/cutouts/capybara-puppet/puppet-face-swap-6b9493d0-08.webp" alt="puppet-face-swap-6b9493d0-08.webp" loading="lazy" style="transform: scale(1.4);"></div>
+        <div class="card-label">puppet-face-swap-6b9493d0-08.webp</div>
+      </div>
+
+      <div class="card" onclick="openModal('/cutouts/capybara-puppet/puppet-face-swap-6b9493d0-09.webp', 'puppet-face-swap-6b9493d0-09.webp')">
+        <div class="card-img-wrap"><img src="/cutouts/capybara-puppet/puppet-face-swap-6b9493d0-09.webp" alt="puppet-face-swap-6b9493d0-09.webp" loading="lazy" style="transform: scale(1.4);"></div>
+        <div class="card-label">puppet-face-swap-6b9493d0-09.webp</div>
+      </div>
+
+      <div class="card" onclick="openModal('/cutouts/capybara-puppet/puppet-face-swap-6b9493d0-10.webp', 'puppet-face-swap-6b9493d0-10.webp')">
+        <div class="card-img-wrap"><img src="/cutouts/capybara-puppet/puppet-face-swap-6b9493d0-10.webp" alt="puppet-face-swap-6b9493d0-10.webp" loading="lazy" style="transform: scale(1.4);"></div>
+        <div class="card-label">puppet-face-swap-6b9493d0-10.webp</div>
+      </div>
+
+      <div class="card" onclick="openModal('/cutouts/capybara-puppet/puppet-face-swap-6b9493d0-11.webp', 'puppet-face-swap-6b9493d0-11.webp')">
+        <div class="card-img-wrap"><img src="/cutouts/capybara-puppet/puppet-face-swap-6b9493d0-11.webp" alt="puppet-face-swap-6b9493d0-11.webp" loading="lazy" style="transform: scale(1.4);"></div>
+        <div class="card-label">puppet-face-swap-6b9493d0-11.webp</div>
+      </div>
+
+      <div class="card" onclick="openModal('/cutouts/capybara-puppet/puppet-face-swap-6b9493d0-12.webp', 'puppet-face-swap-6b9493d0-12.webp')">
+        <div class="card-img-wrap"><img src="/cutouts/capybara-puppet/puppet-face-swap-6b9493d0-12.webp" alt="puppet-face-swap-6b9493d0-12.webp" loading="lazy" style="transform: scale(1.4);"></div>
+        <div class="card-label">puppet-face-swap-6b9493d0-12.webp</div>
+      </div>
+
+      <div class="card" onclick="openModal('/cutouts/capybara-puppet/puppet-face-swap-6b9493d0-13.webp', 'puppet-face-swap-6b9493d0-13.webp')">
+        <div class="card-img-wrap"><img src="/cutouts/capybara-puppet/puppet-face-swap-6b9493d0-13.webp" alt="puppet-face-swap-6b9493d0-13.webp" loading="lazy" style="transform: scale(1.4);"></div>
+        <div class="card-label">puppet-face-swap-6b9493d0-13.webp</div>
+      </div>
+
+      <div class="card" onclick="openModal('/cutouts/capybara-puppet/puppet-face-swap-6b9493d0-14.webp', 'puppet-face-swap-6b9493d0-14.webp')">
+        <div class="card-img-wrap"><img src="/cutouts/capybara-puppet/puppet-face-swap-6b9493d0-14.webp" alt="puppet-face-swap-6b9493d0-14.webp" loading="lazy" style="transform: scale(1.4);"></div>
+        <div class="card-label">puppet-face-swap-6b9493d0-14.webp</div>
+      </div>
+
+      <div class="card" onclick="openModal('/cutouts/capybara-puppet/puppet-face-swap-6b9493d0-15.webp', 'puppet-face-swap-6b9493d0-15.webp')">
+        <div class="card-img-wrap"><img src="/cutouts/capybara-puppet/puppet-face-swap-6b9493d0-15.webp" alt="puppet-face-swap-6b9493d0-15.webp" loading="lazy" style="transform: scale(1.4);"></div>
+        <div class="card-label">puppet-face-swap-6b9493d0-15.webp</div>
+      </div>
+
+      <div class="card" onclick="openModal('/cutouts/capybara-puppet/puppet-face-swap-6b9493d0-16.webp', 'puppet-face-swap-6b9493d0-16.webp')">
+        <div class="card-img-wrap"><img src="/cutouts/capybara-puppet/puppet-face-swap-6b9493d0-16.webp" alt="puppet-face-swap-6b9493d0-16.webp" loading="lazy" style="transform: scale(1.4);"></div>
+        <div class="card-label">puppet-face-swap-6b9493d0-16.webp</div>
+      </div>
+
+      <div class="card" onclick="openModal('/cutouts/capybara-puppet/puppet-face-swap-6b9493d0-17.webp', 'puppet-face-swap-6b9493d0-17.webp')">
+        <div class="card-img-wrap"><img src="/cutouts/capybara-puppet/puppet-face-swap-6b9493d0-17.webp" alt="puppet-face-swap-6b9493d0-17.webp" loading="lazy" style="transform: scale(1.4);"></div>
+        <div class="card-label">puppet-face-swap-6b9493d0-17.webp</div>
+      </div>
+
+      <div class="card" onclick="openModal('/cutouts/capybara-puppet/puppet-face-swap-6b9493d0-18.webp', 'puppet-face-swap-6b9493d0-18.webp')">
+        <div class="card-img-wrap"><img src="/cutouts/capybara-puppet/puppet-face-swap-6b9493d0-18.webp" alt="puppet-face-swap-6b9493d0-18.webp" loading="lazy" style="transform: scale(1.4);"></div>
+        <div class="card-label">puppet-face-swap-6b9493d0-18.webp</div>
+      </div>
+
+      <div class="card" onclick="openModal('/cutouts/capybara-puppet/puppet-face-swap-6b9493d0-19.webp', 'puppet-face-swap-6b9493d0-19.webp')">
+        <div class="card-img-wrap"><img src="/cutouts/capybara-puppet/puppet-face-swap-6b9493d0-19.webp" alt="puppet-face-swap-6b9493d0-19.webp" loading="lazy" style="transform: scale(1.4);"></div>
+        <div class="card-label">puppet-face-swap-6b9493d0-19.webp</div>
+      </div>
+
+      <div class="card" onclick="openModal('/cutouts/capybara-puppet/puppet-face-swap-6b9493d0-20.webp', 'puppet-face-swap-6b9493d0-20.webp')">
+        <div class="card-img-wrap"><img src="/cutouts/capybara-puppet/puppet-face-swap-6b9493d0-20.webp" alt="puppet-face-swap-6b9493d0-20.webp" loading="lazy" style="transform: scale(1.4);"></div>
+        <div class="card-label">puppet-face-swap-6b9493d0-20.webp</div>
+      </div>
+
+      <div class="card" onclick="openModal('/cutouts/capybara-puppet/puppet-face-swap-6b9493d0-21.webp', 'puppet-face-swap-6b9493d0-21.webp')">
+        <div class="card-img-wrap"><img src="/cutouts/capybara-puppet/puppet-face-swap-6b9493d0-21.webp" alt="puppet-face-swap-6b9493d0-21.webp" loading="lazy" style="transform: scale(1.4);"></div>
+        <div class="card-label">puppet-face-swap-6b9493d0-21.webp</div>
+      </div>
+
+      <div class="card" onclick="openModal('/cutouts/capybara-puppet/puppet-face-swap-6b9493d0-22.webp', 'puppet-face-swap-6b9493d0-22.webp')">
+        <div class="card-img-wrap"><img src="/cutouts/capybara-puppet/puppet-face-swap-6b9493d0-22.webp" alt="puppet-face-swap-6b9493d0-22.webp" loading="lazy" style="transform: scale(1.4);"></div>
+        <div class="card-label">puppet-face-swap-6b9493d0-22.webp</div>
+      </div>
+
+      <div class="card" onclick="openModal('/cutouts/capybara-puppet/puppet-face-swap-6b9493d0-23.webp', 'puppet-face-swap-6b9493d0-23.webp')">
+        <div class="card-img-wrap"><img src="/cutouts/capybara-puppet/puppet-face-swap-6b9493d0-23.webp" alt="puppet-face-swap-6b9493d0-23.webp" loading="lazy" style="transform: scale(1.4);"></div>
+        <div class="card-label">puppet-face-swap-6b9493d0-23.webp</div>
+      </div>
+
+      <div class="card" onclick="openModal('/cutouts/capybara-puppet/puppet-face-swap-6b9493d0-24.webp', 'puppet-face-swap-6b9493d0-24.webp')">
+        <div class="card-img-wrap"><img src="/cutouts/capybara-puppet/puppet-face-swap-6b9493d0-24.webp" alt="puppet-face-swap-6b9493d0-24.webp" loading="lazy" style="transform: scale(1.4);"></div>
+        <div class="card-label">puppet-face-swap-6b9493d0-24.webp</div>
+      </div>
+
+      <div class="card" onclick="openModal('/cutouts/capybara-puppet/puppet-face-swap-6b9493d0-25.webp', 'puppet-face-swap-6b9493d0-25.webp')">
+        <div class="card-img-wrap"><img src="/cutouts/capybara-puppet/puppet-face-swap-6b9493d0-25.webp" alt="puppet-face-swap-6b9493d0-25.webp" loading="lazy" style="transform: scale(1.4);"></div>
+        <div class="card-label">puppet-face-swap-6b9493d0-25.webp</div>
+      </div>
+
+      <div class="card" onclick="openModal('/cutouts/capybara-puppet/puppet-face-swap-6b9493d0-26.webp', 'puppet-face-swap-6b9493d0-26.webp')">
+        <div class="card-img-wrap"><img src="/cutouts/capybara-puppet/puppet-face-swap-6b9493d0-26.webp" alt="puppet-face-swap-6b9493d0-26.webp" loading="lazy" style="transform: scale(1.4);"></div>
+        <div class="card-label">puppet-face-swap-6b9493d0-26.webp</div>
+      </div>
+
+      <div class="card" onclick="openModal('/cutouts/capybara-puppet/puppet-face-swap-6b9493d0-27.webp', 'puppet-face-swap-6b9493d0-27.webp')">
+        <div class="card-img-wrap"><img src="/cutouts/capybara-puppet/puppet-face-swap-6b9493d0-27.webp" alt="puppet-face-swap-6b9493d0-27.webp" loading="lazy" style="transform: scale(1.4);"></div>
+        <div class="card-label">puppet-face-swap-6b9493d0-27.webp</div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Modal for inspecting items -->
+  <div id="modal" class="modal" onclick="closeModal(event)">
+    <div class="modal-content" onclick="event.stopPropagation()">
+      <span class="modal-close" onclick="closeModal()">&times;</span>
+      <h3 id="modal-title" style="margin-bottom:8px; color:#1f6b63;">Piece Preview</h3>
+      <img id="modal-img" src="" alt="preview">
+      <div id="modal-name" class="modal-name"></div>
+    </div>
+  </div>
+
+  <script>
+    function openModal(src, name) {
+      document.getElementById('modal-img').src = src;
+      document.getElementById('modal-name').textContent = name;
+      document.getElementById('modal-title').textContent = name;
+      document.getElementById('modal').classList.add('open');
+    }
+    function closeModal() {
+      document.getElementById('modal').classList.remove('open');
+    }
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closeModal();
+    });
+  </script>
+</body>
+</html>

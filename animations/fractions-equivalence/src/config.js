@@ -1,0 +1,23 @@
+// Which piece the child taps before each line.
+window.GATES={"n2":"pizza-whole","n3":"pizza-4-0","n4":"pizza-4-1","n6":"pizza-4-0","n7":"pizza-4-0","n8":"pizza-8-0"};
+window.ASSET_ROOT="assets/";
+window.FILM={"id": "fractions-equivalence", "theme": "Fractions, decimals and money", "title": "Different pieces, the same amount", "sourcePages": [25, 26, 36], "voice": "en-US-AvaNeural", "rate": "-8%", "lines": {"n1": "Here is one whole pizza. A fraction tells us about equal parts of a whole.", "n2": "Cut this pizza into four equal pieces. Each piece is one quarter.", "n3": "Take one piece. One out of four equal pieces is one quarter.", "n4": "Take a second quarter. Two quarters cover half of this same pizza.", "n5": "Now divide another pizza of the same size into two equal pieces.", "n6": "One half and two quarters cover the same amount. The pieces have different names.", "n7": "Split each quarter in two. Our two quarters become four eighths.", "n8": "One half, two quarters, and four eighths are equivalent fractions.", "n9": "Always compare equal sized wholes. Different pieces can show the same amount."}, "beats": [{"id": "whole", "key": "n1", "minimum": 8}, {"id": "quarters", "key": "n2", "minimum": 7}, {"id": "one", "key": "n3", "minimum": 7}, {"id": "two", "key": "n4", "minimum": 7}, {"id": "half", "key": "n5", "minimum": 7}, {"id": "compare", "key": "n6", "minimum": 8}, {"id": "eighths", "key": "n7", "minimum": 7}, {"id": "equal", "key": "n8", "minimum": 7}, {"id": "finish", "key": "n9", "minimum": 7}]};
+Object.assign(window.MANIFEST.sizes,{"label-0": [1348, 140], "label-1": [1516, 140], "label-2": [508, 140], "label-3": [676, 140], "label-4": [256, 140], "label-5": [256, 140], "label-6": [256, 140], "label-7": [256, 140], "label-8": [760, 140], "label-9": [1138, 140], "cat.webp": [1330, 1182], "dog.webp": [1330, 1182], "fish-side.webp": [1448, 1086], "pizza-whole-top.webp": [1448, 1086], "marble-red.webp": [1254, 1254], "marble-green.webp": [1254, 1254]});
+window.ASSET_URLS={"label-0": "assets/labels/label-0.webp", "label-1": "assets/labels/label-1.webp", "label-2": "assets/labels/label-2.webp", "label-3": "assets/labels/label-3.webp", "label-4": "assets/labels/label-4.webp", "label-5": "assets/labels/label-5.webp", "label-6": "assets/labels/label-6.webp", "label-7": "assets/labels/label-7.webp", "label-8": "assets/labels/label-8.webp", "label-9": "assets/labels/label-9.webp", "cat.webp": "assets/app/cat.webp", "dog.webp": "assets/app/dog.webp", "fish-side.webp": "assets/app/fish-side.webp", "pizza-whole-top.webp": "assets/app/pizza-whole-top.webp", "marble-red.webp": "assets/app/probability-solids-kit-v2/marble-red.webp", "marble-green.webp": "assets/app/probability-solids-kit-v2/marble-green.webp"};
+window.LABELS={"FRACTIONS, DECIMALS AND MONEY": "label-0", "Different pieces, the same amount": "label-1", "ONE WHOLE": "label-2", "4 EQUAL PARTS": "label-3", "1/4": "label-4", "2/4": "label-5", "1/2": "label-6", "4/8": "label-7", "1/2 = 2/4 = 4/8": "label-8", "SAME WHOLE · SAME AMOUNT": "label-9"};
+
+window.MANIFEST.sizes["pizza-2-0"]=[620, 620];window.ASSET_URLS["pizza-2-0"]="assets/parts/pizza-2-0.webp";
+window.MANIFEST.sizes["pizza-2-1"]=[620, 620];window.ASSET_URLS["pizza-2-1"]="assets/parts/pizza-2-1.webp";
+window.MANIFEST.sizes["pizza-4-0"]=[620, 620];window.ASSET_URLS["pizza-4-0"]="assets/parts/pizza-4-0.webp";
+window.MANIFEST.sizes["pizza-4-1"]=[620, 620];window.ASSET_URLS["pizza-4-1"]="assets/parts/pizza-4-1.webp";
+window.MANIFEST.sizes["pizza-4-2"]=[620, 620];window.ASSET_URLS["pizza-4-2"]="assets/parts/pizza-4-2.webp";
+window.MANIFEST.sizes["pizza-4-3"]=[620, 620];window.ASSET_URLS["pizza-4-3"]="assets/parts/pizza-4-3.webp";
+window.MANIFEST.sizes["pizza-8-0"]=[620, 620];window.ASSET_URLS["pizza-8-0"]="assets/parts/pizza-8-0.webp";
+window.MANIFEST.sizes["pizza-8-1"]=[620, 620];window.ASSET_URLS["pizza-8-1"]="assets/parts/pizza-8-1.webp";
+window.MANIFEST.sizes["pizza-8-2"]=[620, 620];window.ASSET_URLS["pizza-8-2"]="assets/parts/pizza-8-2.webp";
+window.MANIFEST.sizes["pizza-8-3"]=[620, 620];window.ASSET_URLS["pizza-8-3"]="assets/parts/pizza-8-3.webp";
+window.MANIFEST.sizes["pizza-8-4"]=[620, 620];window.ASSET_URLS["pizza-8-4"]="assets/parts/pizza-8-4.webp";
+window.MANIFEST.sizes["pizza-8-5"]=[620, 620];window.ASSET_URLS["pizza-8-5"]="assets/parts/pizza-8-5.webp";
+window.MANIFEST.sizes["pizza-8-6"]=[620, 620];window.ASSET_URLS["pizza-8-6"]="assets/parts/pizza-8-6.webp";
+window.MANIFEST.sizes["pizza-8-7"]=[620, 620];window.ASSET_URLS["pizza-8-7"]="assets/parts/pizza-8-7.webp";
+window.MANIFEST.sizes["pizza-whole"]=[620, 620];window.ASSET_URLS["pizza-whole"]="assets/parts/pizza-whole.webp";

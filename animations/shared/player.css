@@ -1,0 +1,93 @@
+/* Interactive layer: the paper pointer, the ring around what to tap, and the Next card. */
+#tap-hint{position:absolute;left:0;top:0;width:100%;height:100%;pointer-events:none;z-index:400}
+#tap-hint[hidden]{display:none}
+#tap-hint .tap-ring{position:absolute;left:var(--x);top:var(--y);width:var(--ring);height:var(--ring);margin:calc(var(--ring) / -2) 0 0 calc(var(--ring) / -2);border-radius:50%;border:9px solid #e0552f;box-shadow:0 0 0 6px rgba(255,248,226,.95),inset 0 0 0 4px rgba(255,248,226,.9),0 8px 22px rgba(48,30,12,.25);animation:tap-ring 1.3s ease-in-out infinite}
+/* the stick's red tip is near its top right corner; the stick rests down-left of the target */
+#tap-hint .tap-stick{position:absolute;left:var(--tx);top:var(--ty);width:300px;height:auto;margin:-36px 0 0 -268px;transform-origin:268px 36px;filter:drop-shadow(6px 10px 8px rgba(74,48,22,.3));animation:tap-stick 1.3s ease-in-out infinite}
+#tap-hint.on-next .tap-ring{border-color:#e0552f}
+#tap-hint.shake .tap-ring{animation:tap-shake .36s ease-out,tap-ring 1.3s ease-in-out .36s infinite}
+#tap-hint.tapped .tap-ring{animation:tap-burst .3s ease-out forwards}
+@keyframes tap-ring{0%,100%{transform:scale(1);opacity:.95}50%{transform:scale(1.08);opacity:.7}}
+@keyframes tap-stick{0%,100%{transform:translate(-26px,30px) rotate(0)}45%{transform:translate(-4px,4px) rotate(-3deg)}55%{transform:translate(0,0) rotate(-3deg)}}
+@keyframes tap-shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-14px)}50%{transform:translateX(12px)}75%{transform:translateX(-6px)}}
+@keyframes tap-burst{to{transform:scale(1.5);opacity:0}}
+#tap-next{position:absolute;right:70px;bottom:150px;width:150px;height:150px;border:0;border-radius:50%;background:#f6c544;color:#2e251c;box-shadow:0 12px 26px rgba(48,30,12,.32),0 4px 0 #e2a91f;cursor:pointer;z-index:390;display:grid;place-items:center;animation:tap-ring 1.3s ease-in-out infinite}
+#tap-next[hidden]{display:none}
+#tap-next svg{width:96px;height:96px}
+#tap-next:focus-visible{outline:6px solid #fff6dc;outline-offset:6px}
+.piece img.tap-hop{animation:tap-hop .42s cubic-bezier(.3,1.6,.5,1)}
+@keyframes tap-hop{0%{transform:scale(1)}35%{transform:scale(1.12) translateY(-6%)}100%{transform:scale(1)}}
+body.portrait #tap-next{right:50px;bottom:200px}
+body.render #tap-hint,body.render #tap-next{display:none}
+@media(prefers-reduced-motion:reduce){#tap-hint .tap-ring,#tap-hint .tap-stick,#tap-next{animation:none}.piece img.tap-hop{animation:none}}
+
+/* The paper capybara helper, bottom-left, above the torn paper corner */
+#capy-helper{position:absolute;left:30px;bottom:88px;width:280px;height:292px;z-index:380;pointer-events:auto;cursor:pointer;transform-origin:50% 100%;animation:capy-breathe 3.2s ease-in-out infinite}
+#capy-helper img{width:100%;height:100%;object-fit:contain;object-position:50% 100%;filter:drop-shadow(5px 9px 7px rgba(74,48,22,.28));user-select:none;pointer-events:none}
+#capy-helper.hop{animation:capy-hop .55s cubic-bezier(.3,1.5,.5,1),capy-breathe 3.2s ease-in-out .55s infinite}
+#capy-helper.wobble{animation:capy-wobble .5s ease-in-out,capy-breathe 3.2s ease-in-out .5s infinite}
+@keyframes capy-breathe{0%,100%{transform:scale(1,1)}50%{transform:scale(1.015,.985)}}
+@keyframes capy-hop{0%{transform:translateY(0) scale(1,1)}20%{transform:translateY(0) scale(1.06,.92)}50%{transform:translateY(-46px) scale(.96,1.05)}80%{transform:translateY(0) scale(1.05,.94)}100%{transform:translateY(0) scale(1,1)}}
+@keyframes capy-wobble{0%,100%{transform:rotate(0)}30%{transform:rotate(-5deg)}65%{transform:rotate(4deg)}}
+body.portrait #capy-helper{left:26px;bottom:150px;width:200px;height:210px}
+body.render #capy-helper{display:none}
+@media(prefers-reduced-motion:reduce){#capy-helper,#capy-helper.hop,#capy-helper.wobble{animation:none}}
+
+/* Job 17: bigger control bar for small hands (fits inside the 90 px the stage leaves free at the bottom). */
+#controls{bottom:10px;gap:16px;min-height:76px}
+#controls button{min-height:72px;font-size:24px;padding:0 28px 0 22px;gap:10px}
+#controls button svg{width:32px;height:32px}
+#controls #play{min-width:170px}
+#status{font-size:19px}
+@media(max-width:600px){#controls{gap:8px}#controls button{min-height:60px;font-size:18px;padding:0 14px 0 11px}#controls button svg{width:26px;height:26px}#controls #play{min-width:0}#status{font-size:13px}}
+
+/* Frame v3 (user, 3 Oct): no black bars, small paper controls, two ways to start.
+   The craft table fills the whole screen behind the stage, so the space around the picture is table. */
+html,body{background:#e8dcc4 url('craft-table.jpg') center/cover no-repeat}
+#viewport{inset:0}
+/* small round cream buttons, icons only, bottom-right corner; the words stay for screen readers */
+#controls{left:auto;right:12px;bottom:12px;gap:8px;min-height:0;justify-content:flex-end;z-index:600}
+#controls button,#controls #play{width:46px;min-width:0;height:46px;min-height:0;padding:0;justify-content:center;gap:0;border-radius:50%;background:#f6efe2;color:#3a2a1a;box-shadow:0 0 0 2px #b98a5a,0 3px 6px rgba(74,48,22,.25);opacity:.85}
+#controls button svg{width:22px;height:22px}
+#controls button span,#status{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+@media(max-width:600px){#controls button,#controls #play{width:40px;height:40px}#controls button svg{width:19px;height:19px}}
+/* start: "Tap along" and "Just watch" side by side, same paper look as the app's buttons */
+#bigplay,#bigwatch{height:120px;padding:0 48px 0 36px;font-size:46px;border-radius:999px;gap:16px;background:#f6efe2;color:#3a2a1a;box-shadow:0 0 0 4px #b98a5a,0 12px 26px rgba(48,30,12,.3)}
+#bigplay svg,#bigwatch svg{width:64px;height:64px}
+#bigwatch{position:absolute;top:50%;display:flex;align-items:center;border:0;cursor:pointer;z-index:500;font-family:var(--face);font-weight:600}
+#bigwatch[hidden]{display:none}
+body.two-starts #bigplay{left:calc(50% - 300px)}
+body.two-starts #bigwatch{left:calc(50% + 300px);transform:translate(-50%,-50%);background:#e9b530;box-shadow:0 0 0 4px #b98a5a,0 12px 26px rgba(48,30,12,.3)}
+body.portrait.two-starts #bigplay{left:50%;top:calc(50% - 110px)}
+body.portrait.two-starts #bigwatch{left:50%;top:calc(50% + 110px)}
+/* the table picture is bigger than the stage: let a little of it show past the edge, so a slightly
+   different screen shape shows more table instead of a seam (pieces parked off-stage stay hidden) */
+body:not(.render) #stage{overflow:clip;overflow-clip-margin:90px}
+body.portrait #bigplay,body.portrait #bigwatch{height:130px;font-size:50px}
+/* where the camera framing leaves the stage edge uncovered, show the same table, not a pale strip */
+#stage{background:#efe3cc url('craft-table.jpg') center/cover}
+/* landscape: the table picture reaches further down (cropped at the sides, never stretched), so the
+   torn corners run off the bottom edge instead of stopping at a line */
+body:not(.portrait) #table{height:1720px;object-fit:cover;object-position:50% 0}
+
+/* Buttons in the app's own look (user, 3 Oct): the same thin paper strips and serif writing as the
+   lesson Next / choice buttons, and the corner controls on the same cream paper as the Menu buttons. */
+#bigplay,#bigwatch{border:0;border-radius:0;box-shadow:none;color:#35271e;font:400 46px/1 Georgia,serif;letter-spacing:0;
+  background:url('/papercraft-/fraction-art/thin-cream-gentle.webp') center/100% 100% no-repeat;filter:drop-shadow(1px 3px 2px #59371b33);height:110px;padding:0 54px 0 40px}
+#bigwatch,body.two-starts #bigwatch{background:url('/papercraft-/fraction-art/thin-sage-gentle.webp') center/100% 100% no-repeat;box-shadow:none}
+#bigplay svg,#bigwatch svg{width:50px;height:50px}
+#bigplay:hover,#bigwatch:hover{background-color:transparent;filter:drop-shadow(1px 3px 2px #59371b33) brightness(1.04)}
+#controls button,#controls #play{border-radius:0;box-shadow:none;background:none;color:#35271e;opacity:.9;
+  border:10px solid transparent;border-image:url('/papercraft-/home-ui/button-cream.webp') 40 fill / 10px stretch;filter:drop-shadow(0 2px 2px #59371b2e)}
+#controls button:hover,#controls #play:hover{background:none}
+body.portrait #bigplay,body.portrait #bigwatch{height:120px;font-size:50px}
+
+/* Codex paper buttons (paper-set/btn-*.webp, set by setPaper in player.js): round paper discs in the
+   corner. Pause / Tap along / Just watch use the plain disc with a teal icon drawn on it. */
+#controls button.paper-btn,#controls #play.paper-btn{width:56px;height:56px;border:0;border-image:none;border-radius:50%;
+  background:none center/contain no-repeat;color:#1f6b63;opacity:1;filter:drop-shadow(0 2px 3px #59371b40)}
+#controls button.paper-btn:hover,#controls #play.paper-btn:hover{background-color:transparent;background-position:center;background-size:contain;background-repeat:no-repeat;filter:drop-shadow(0 2px 3px #59371b40) brightness(1.04)}
+#controls button.paper-btn:active{transform:scale(.94)}
+#controls button.paper-btn:disabled{opacity:.55}
+#controls button.paper-btn svg{width:30px;height:30px}
+@media(max-width:600px){#controls button.paper-btn,#controls #play.paper-btn{width:46px;height:46px}#controls button.paper-btn svg{width:25px;height:25px}}

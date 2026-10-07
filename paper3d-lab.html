@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#f6efe2"><title>Paper 3D lab</title><link rel="icon" href="data:,"><link rel="stylesheet" href="/papercraft-/paper3d/lab.css"></head>
+<body>
+<main>
+<header><div><h1>Paper, with a little depth.</h1><p>Turn it. Fold it. Take it apart.</p></div><div class="tools"><button id="motion" aria-pressed="false">Tablet tilt: off</button><button id="reset">Reset views</button><button id="sound" aria-pressed="true">Sound: on</button></div></header>
+<p class="instructions">Drag to turn · Pinch to zoom · Double-tap to reset. Tap the paper to see it move. On a net, drag one side to fold it by hand.</p>
+<section class="experiments" aria-label="Three paper experiments">
+<article><div class="shape-picker" role="group" aria-label="Choose a shape"><button data-shape="cube" aria-pressed="true">Cube</button><button data-shape="squarePrism" aria-pressed="false">Square prism</button><button data-shape="triangularPrism" aria-pressed="false">Triangular prism</button><button data-shape="squarePyramid" aria-pressed="false">Square pyramid</button><button data-shape="triangularPyramid" aria-pressed="false">Triangular pyramid</button></div><div class="stage"><canvas id="cube" tabindex="0" role="button" aria-label="Cube net. Tap or press Enter to fold. Drag to turn, pinch to zoom."></canvas></div><div class="caption"><div><h2 id="cube-title">A net becomes a cube</h2><p id="cube-state" aria-live="polite">Six faces, one connected sheet.</p></div><button id="cube-action">Fold cube</button></div></article>
+<article><div class="stage"><canvas id="rod" tabindex="0" role="button" aria-label="Ten-rod. Tap or press Enter to separate into ten ones. Drag to turn, pinch to zoom."></canvas></div><div class="caption"><div><h2>Ten, in little pieces</h2><p id="rod-state" aria-live="polite">One ten is still ten ones.</p></div><button id="rod-action">Split into 10</button></div></article>
+<article><div class="stage"><canvas id="popup" tabindex="0" role="button" aria-label="Layered pop-up card. Tap or press Enter to open. Drag to turn, pinch to zoom."></canvas></div><div class="caption"><div><h2>A surprise in the fold</h2><p id="popup-state" aria-live="polite">Three layers rise from the page.</p></div><button id="popup-action">Open card</button></div></article>
+</section>
+<footer><p>Real card edges. Small paper textures. Light from the top left.</p><p id="motion-status" role="status">Tablet tilt is optional. Keyboard: arrows to turn, + / − to zoom, 0 to reset.</p></footer>
+</main><script type="module" src="/papercraft-/paper3d/lab.js"></script>
+</body></html>

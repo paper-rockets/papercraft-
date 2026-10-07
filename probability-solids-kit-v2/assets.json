@@ -1,0 +1,95 @@
+{
+  "version": 2,
+  "assets": {
+    "cylinder-body": {
+      "file": "cylinder-body.svg",
+      "width": 1536,
+      "height": 1024,
+      "visibleBounds": [
+        69,
+        147,
+        1467,
+        931
+      ],
+      "status": "geometry-native isolated curved-wall asset using generated paper material; use SVG, not raw material PNG"
+    },
+    "cylinder-bottom": {
+      "file": "cylinder-bottom.webp",
+      "width": 1774,
+      "height": 887,
+      "visibleBounds": [
+        187,
+        234,
+        1586,
+        687
+      ],
+      "transparentPixelFraction": 0.6709,
+      "status": "isolated component; register scale and anchors during assembly"
+    },
+    "cylinder-top": {
+      "file": "cylinder-top.webp",
+      "width": 1983,
+      "height": 793,
+      "visibleBounds": [
+        184,
+        182,
+        1794,
+        613
+      ],
+      "transparentPixelFraction": 0.6408,
+      "status": "isolated component; register scale and anchors during assembly"
+    },
+    "jar-back": {
+      "file": "jar-back.webp",
+      "width": 1341,
+      "height": 1173,
+      "visibleBounds": [
+        80,
+        97,
+        1257,
+        1081
+      ],
+      "transparentPixelFraction": 0.3556,
+      "status": "isolated component; register scale and anchors during assembly"
+    },
+    "jar-front": {
+      "file": "jar-front.webp",
+      "width": 1312,
+      "height": 1199,
+      "visibleBounds": [
+        71,
+        63,
+        1243,
+        1137
+      ],
+      "transparentPixelFraction": 0.7996,
+      "status": "isolated component; register scale and anchors during assembly"
+    },
+    "marble-green": {
+      "file": "marble-green.webp",
+      "width": 1254,
+      "height": 1254,
+      "visibleBounds": [
+        151,
+        146,
+        1103,
+        1105
+      ],
+      "transparentPixelFraction": 0.5421,
+      "status": "isolated component; register scale and anchors during assembly"
+    },
+    "marble-red": {
+      "file": "marble-red.webp",
+      "width": 1254,
+      "height": 1254,
+      "visibleBounds": [
+        97,
+        105,
+        1158,
+        1159
+      ],
+      "transparentPixelFraction": 0.4411,
+      "status": "isolated component; register scale and anchors during assembly"
+    }
+  }
+}

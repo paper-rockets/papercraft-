@@ -1,0 +1,9 @@
+# Thin torn paper sheets
+
+Generated with built-in image generation. Blank transparent cream title-strip.png and text-sheet.png. Keep text in HTML; preserve aspect ratio. No extra bevel or heavy shadow.
+
+title-strip
+Use case: product-mockup. Asset: transparent papercraft math app text background. A wide horizontal blank title strip of cream paper, approximately 5:1 aspect ratio. One single thin sheet of real ivory cotton paper seen straight overhead, entirely flat with delicately irregular torn fibrous edges. Crisp fine natural paper grain, subtle warm cream color, calm clean blank center for text. Paper should look like a thin lightweight sheet, not thick cardboard, biscuit, leather, embossed plaque or stacked layers. No bevel, no brown outline, no scorched edge, no curled corners. Almost imperceptible soft contact shadow only. Generous transparent margin around whole sheet, complete edges visible. No text, symbols, objects or backdrop. High quality photographic material matching handcrafted paper educational assets.
+
+text-sheet
+Use case: product-mockup. Asset: transparent papercraft math app text background. A blank landscape cream paper text sheet, approximately 2:1 aspect ratio. One single thin sheet of real ivory cotton paper seen straight overhead, entirely flat with delicately irregular torn fibrous edges. Crisp fine natural paper grain, subtle warm cream color, calm clean blank center for text. Paper should look like a thin lightweight sheet, not thick cardboard, biscuit, leather, embossed plaque or stacked layers. No bevel, no brown outline, no scorched edge, no curled corners. Almost imperceptible soft contact shadow only. Generous transparent margin around whole sheet, complete edges visible. No text, symbols, objects or backdrop. High quality photographic material matching handcrafted paper educational assets.

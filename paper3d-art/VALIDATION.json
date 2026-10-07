@@ -1,0 +1,110 @@
+[
+  {
+    "file": "nets.webp",
+    "size": [
+      1448,
+      1086
+    ],
+    "alpha_extrema": [
+      0,
+      255
+    ],
+    "transparent_pixels": 1050523
+  },
+  {
+    "file": "base-ten.webp",
+    "size": [
+      2048,
+      1536
+    ],
+    "alpha_extrema": [
+      0,
+      255
+    ],
+    "transparent_pixels": 2509716
+  },
+  {
+    "file": "cube-box.webp",
+    "size": [
+      1448,
+      1086
+    ],
+    "alpha_extrema": [
+      0,
+      255
+    ],
+    "transparent_pixels": 1048784
+  },
+  {
+    "file": "fraction-paper.webp",
+    "size": [
+      1448,
+      1086
+    ],
+    "alpha_extrema": [
+      0,
+      255
+    ],
+    "transparent_pixels": 874864
+  },
+  {
+    "file": "clock-parts.webp",
+    "size": [
+      1448,
+      1086
+    ],
+    "alpha_extrema": [
+      0,
+      255
+    ],
+    "transparent_pixels": 1054363
+  },
+  {
+    "file": "scale-parts.webp",
+    "size": [
+      2048,
+      1536
+    ],
+    "alpha_extrema": [
+      0,
+      255
+    ],
+    "transparent_pixels": 2659011
+  },
+  {
+    "file": "popup-layers.webp",
+    "size": [
+      2048,
+      1536
+    ],
+    "alpha_extrema": [
+      0,
+      255
+    ],
+    "transparent_pixels": 2038496
+  },
+  {
+    "file": "island.webp",
+    "size": [
+      2048,
+      1536
+    ],
+    "alpha_extrema": [
+      0,
+      255
+    ],
+    "transparent_pixels": 1959701
+  },
+  {
+    "file": "paper-textures.webp",
+    "size": [
+      2048,
+      1536
+    ],
+    "alpha_extrema": [
+      0,
+      255
+    ],
+    "transparent_pixels": 1368080
+  }
+]

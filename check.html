@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Things to check</title>
+<style>
+  :root { --paper:#f6efe2; --ink:#35271e; --kraft:#b98a5a; --teal:#1f6b63; --done:#dfe9df; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:#efe3cc; color:var(--ink); font:18px/1.4 Georgia, serif; }
+  main { max-width:760px; margin:0 auto; padding:20px 16px 60px; }
+  h1 { font-size:28px; margin:0 0 4px; }
+  p.lead { margin:0 0 20px; }
+  h2 { font-size:20px; margin:28px 0 10px; color:var(--teal); }
+  .row { background:var(--paper); border:2px solid var(--kraft); padding:12px 14px; margin:0 0 10px; display:flex; gap:12px; align-items:flex-start; }
+  .row.done { background:var(--done); opacity:.75; }
+  .row input { width:26px; height:26px; margin-top:3px; flex:none; accent-color:var(--teal); }
+  .txt { flex:1; }
+  .name { font-weight:bold; }
+  .look { font-size:16px; margin:2px 0 8px; }
+  .btns { display:flex; flex-wrap:wrap; gap:8px; }
+  .btns a { display:inline-block; padding:10px 16px; background:#fff; border:2px solid var(--teal); color:var(--teal); text-decoration:none; font-size:17px; }
+  .btns a:active { background:var(--teal); color:#fff; }
+  .tip { background:var(--paper); border-left:6px solid var(--teal); padding:10px 14px; font-size:16px; }
+</style>
+</head>
+<body>
+<main>
+<h1>Things to check</h1>
+<p class="lead">Tap a button, look at the screen, then come back here (browser back) and tick the box. If something looks wrong, take a screenshot and send it to Claude.</p>
+<p class="tip">Each lesson has three steps at the top: Watch, Play, Try. The buttons below jump straight to them. In Play, finish a task and wait: the next thing should glow. Tap Next early: a "Need some help?" card should appear.</p>
+
+<h2>1. Home and Menu</h2>
+<div id="list"></div>
+</main>
+<script>
+const L = (topic, stage) => '/?topic=' + topic + '&stage=' + stage + '&example=0';
+const lesson = (topic) => [['Watch', L(topic, 'watch')], ['Play', L(topic, 'play')], ['Try', L(topic, 'try')]];
+const groups = [
+  ['1. Home and Menu', [
+    ['Home page', 'Logo, topic cards, pictures sit inside the card window, titles fit.', [['Open Home', '/']]],
+    ['Menu', 'Open any lesson and tap Menu (top right): new paper cards picture, Home is first.', [['Open a lesson', L('comparing-numbers', 'watch')]]],
+  ]],
+  ['2. Number lessons', [
+    ['Comparing Numbers', 'Digit tiles on one board. Play: tap the glowing ? tile in each row.', lesson('comparing-numbers')],
+    ['Addition and Addition Tables', 'Play: tap board 1, board 2, then the ?. Table: tap a row number then a column number.', lesson('addition-and-addition-tables')],
+    ['Subtraction and Subtraction Tables', 'Paper number line. Play: tap the glowing frog to hop.', lesson('subtraction-and-subtraction-tables')],
+    ['Adding Big Numbers', 'Paper board, no tape. Play: the cell to fill glows as a ? tile.', lesson('adding-big-numbers')],
+    ['Subtracting Big Numbers', 'Same look as Adding Big Numbers.', lesson('subtracting-big-numbers')],
+    ['Missing Terms', 'Paper bar model. Play: tap the big + or - tile, then the glowing tick.', lesson('missing-terms')],
+  ]],
+  ['3. Geometry lessons', [
+    ['Symmetric Figures', 'Watch: shapes really fold. Play: tap near a dashed line and the paper folds.', lesson('symmetric-figures')],
+    ['Reflection', 'Watch: figure flips over the line. Play: tap a dashed line.', lesson('reflection')],
+    ['Frieze Patterns', 'Paper pieces in a strip. Play: tap the pieces, continue the pattern.', lesson('frieze-patterns')],
+    ['Cartesian Planes', 'Paper capybara walks across, then up. Play: tap 5, then 2, then the crossing.', lesson('cartesian-planes')],
+    ['Angles', 'Bigger angles. Tap an angle and it says its name.', lesson('angles')],
+    ['Parallel and Perpendicular Lines', 'Paper rods. "Never meet" picture: rods keep growing.', lesson('parallel-and-perpendicular-lines')],
+    ['Prisms and Pyramids (3D)', 'Turn the solid with a finger. Play: tap a face, an edge or a corner on it.', lesson('prisms-and-pyramids')],
+  ]],
+  ['4. Animation', [
+    ['Animation buttons', 'Bottom right: round paper buttons (play, replay, sound). Start screen: Tap along / Just watch.', [['Open animation', '/papercraft-/animations/measurement-area/index.html']]],
+  ]],
+];
+let ticks = {};
+try { ticks = JSON.parse(localStorage.getItem('check-ticks') || '{}'); } catch (e) {}
+const main = document.querySelector('main');
+document.querySelector('h2').remove(); document.getElementById('list').remove();
+for (const [title, rows] of groups) {
+  const h = document.createElement('h2'); h.textContent = title; main.appendChild(h);
+  for (const [name, look, links] of rows) {
+    const row = document.createElement('div'); row.className = 'row';
+    const box = document.createElement('input'); box.type = 'checkbox'; box.checked = !!ticks[name];
+    row.classList.toggle('done', box.checked);
+    box.onchange = () => { ticks[name] = box.checked; row.classList.toggle('done', box.checked); try { localStorage.setItem('check-ticks', JSON.stringify(ticks)); } catch (e) {} };
+    const txt = document.createElement('div'); txt.className = 'txt';
+    txt.innerHTML = '<div class="name"></div><div class="look"></div><div class="btns"></div>';
+    txt.querySelector('.name').textContent = name; txt.querySelector('.look').textContent = look;
+    for (const [label, href] of links) { const a = document.createElement('a'); a.href = href; a.textContent = label; txt.querySelector('.btns').appendChild(a); }
+    row.append(box, txt); main.appendChild(row);
+  }
+}
+</script>
+</body>
+</html>

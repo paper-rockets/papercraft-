@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#f6efe2"><title>Blocks 3D test</title><link rel="icon" href="data:,">
+<style>
+  @font-face{font-family:PaperReading;src:url('/papercraft-/fonts/reading.woff2') format('woff2');font-display:swap}
+  html,body{margin:0;height:100%;background:#e8dfce;font-family:PaperReading,Georgia,serif;color:#342c23}
+  main{height:100dvh;display:flex;flex-direction:column}
+  header{display:flex;align-items:center;gap:10px;flex-wrap:wrap;padding:12px 16px;background:#f6efe2}
+  h1{font-size:24px;margin:0 auto 0 0;font-weight:600}
+  button{font:inherit;font-size:17px;min-height:44px;padding:10px 16px;border:0;border-radius:5px;background:#e7d8bf;color:#342c23;cursor:pointer}
+  button.main{background:#1f6b63;color:#fffaf0}
+  canvas{flex:1;width:100%;min-height:0;display:block;touch-action:none}
+  #speed{position:fixed;right:10px;bottom:8px;font:13px/1.3 system-ui,sans-serif;color:#66523e;background:#f6efe2cc;padding:4px 8px;border-radius:4px}
+</style></head>
+<body><main>
+<header><h1>1246 in paper blocks</h1><button id="all" class="main">Break all</button><button id="reset">Reset view</button><button id="sound" aria-pressed="true">Sound: on</button></header>
+<canvas id="blocks" tabindex="0" aria-label="1246 as paper base-ten blocks. Tap a block to break it into ten smaller ones. Drag to turn, pinch to zoom."></canvas>
+</main>
+<p id="speed" aria-hidden="true">speed: -</p>
+<script type="module">
+  import {baseTenScene} from '/papercraft-/paper3d/blocks.js';
+  import {attachPaperSound,setPaperSound,paperSoundOn} from '/papercraft-/paper3d/sound.js';
+  const engine = baseTenScene(document.querySelector('#blocks'), 1246);
+  attachPaperSound(engine);
+  // Speed readout: how long one picture takes to draw, and pictures per second while moving.
+  const draw = engine.render.bind(engine); let ms = [], frames = [];
+  engine.render = () => { const t = performance.now(); draw(); ms.push(performance.now() - t); frames.push(t); };
+  setInterval(() => {
+    const now = performance.now(); frames = frames.filter(t => now - t < 1000);
+    const avg = ms.length ? ms.reduce((a, b) => a + b) / ms.length : 0; ms = [];
+    document.querySelector('#speed').textContent = `draw ${avg.toFixed(1)} ms · ${frames.length} fps`;
+  }, 500);
+  let broken = false;
+  document.querySelector('#all').onclick = e => { broken = !broken; engine.breakAll(broken); e.target.textContent = broken ? 'Put back' : 'Break all'; };
+  document.querySelector('#reset').onclick = () => engine.reset();
+  document.querySelector('#sound').onclick = e => { const on = !paperSoundOn(); setPaperSound(on); e.target.textContent = `Sound: ${on ? 'on' : 'off'}`; e.target.setAttribute('aria-pressed', String(on)); };
+  window.blocksTest = engine;
+</script>
+</body></html>

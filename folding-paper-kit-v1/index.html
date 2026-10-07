@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Folding papercraft kit</title>
+<style>
+@font-face{font-family:Paper;src:url('../book-art/fonts/BookReading.woff2')}
+body{margin:0;background:#f7f0df url('../backgrounds/plain-cream-2-1200x2000.webp') center/cover;color:#30261d;font-family:Georgia,serif;padding:32px}main{max-width:1150px;margin:auto}h1{font-size:36px;margin:0 0 12px}p{font-size:19px;line-height:1.45}.toolbar{display:flex;gap:12px;flex-wrap:wrap;align-items:center}button,select{font:inherit;font-size:19px;color:inherit;padding:12px 18px;border:1px solid #a58d66;background:#fff8e9;border-radius:4px}button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #276e67;outline-offset:4px}.views{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-top:24px}svg{width:100%;height:430px;overflow:visible}.controls{display:flex;align-items:center;gap:15px;margin:20px 0}input{flex:1;accent-color:#27776a;min-height:44px}h2{font-size:23px;margin-bottom:0}a{color:#205e54}#parts{display:flex;gap:14px;flex-wrap:wrap;margin:20px 0}#parts a{padding:8px 0}@media(max-width:700px){body{padding:20px}.views{grid-template-columns:1fr;gap:10px}svg{height:320px}h1{font-size:29px}}
+</style>
+<main><h1>Folding paper craft kit</h1><p>Separate textured faces, reverse sides, glue tabs and exact hinges.</p>
+<div class="toolbar"><label>Solid <select id="solid"><option value="prism">Triangular prism</option><option value="pyramid">Triangular pyramid</option></select></label><button id="flat">Flat net</button><button id="half">Half fold</button><button id="closed">Closed solid</button></div>
+<div class="views"><section><h2>Exact source net</h2><svg id="net" role="img" aria-label="Flat papercraft net"></svg></section><section><h2>Folded geometry</h2><svg id="folded" viewBox="0 0 500 430" role="img" aria-label="Papercraft folding preview"></svg></section></div>
+<div class="controls"><label for="fold">Fold</label><input id="fold" type="range" min="0" max="1" step=".005" value="0"><output id="progress">0%</output></div><p id="counts"></p>
+<div id="parts"></div><p><a href="assets.json">Face and hinge data</a> · <a href="OPUS_HANDOFF.md">Opus handoff</a> · <a href="geometry-checks.json">Geometry checks</a></p></main>
+<script type="module">
+import {foldPoint} from './fold-math.js';
+const kit=await(await fetch('./assets.json')).json();
+const selector=document.querySelector('#solid'),slider=document.querySelector('#fold');
+const materials={prism:'./materials/mustard.webp',pyramid:'./materials/teal.webp'};
+function pattern(kind){return `<defs><pattern id="paper-${kind}" patternUnits="userSpaceOnUse" width="400" height="400"><image href="${materials[kind]}" width="400" height="400" preserveAspectRatio="xMidYMid slice"/></pattern><pattern id="reverse" patternUnits="userSpaceOnUse" width="400" height="400"><image href="./materials/cream.webp" width="400" height="400" preserveAspectRatio="xMidYMid slice"/></pattern></defs>`;}
+const coords=p=>p.map(v=>v.join(',')).join(' ');
+function camera([x,y,z]){const a=-48*Math.PI/180,b=35*Math.PI/180,X=x*Math.cos(a)+z*Math.sin(a),Z=-x*Math.sin(a)+z*Math.cos(a);return [X,y*Math.cos(b)-Z*Math.sin(b),y*Math.sin(b)+Z*Math.cos(b)];}
+function render(){
+ const kind=selector.value,solid=kit.solids[kind],t=+slider.value;
+ const all=solid.faces.flatMap(f=>f.points2D),xs=all.map(p=>p[0]),ys=all.map(p=>p[1]);
+ const net=document.querySelector('#net');net.setAttribute('viewBox',`${Math.min(...xs)-12} ${Math.min(...ys)-12} ${Math.max(...xs)-Math.min(...xs)+24} ${Math.max(...ys)-Math.min(...ys)+24}`);
+ net.innerHTML=pattern(kind)+solid.glueTabs.map(tab=>`<polygon points="${coords(tab.points)}" fill="url(#reverse)" stroke="#725237" stroke-width=".4"/>`).join('')+solid.faces.map(f=>`<polygon points="${coords(f.points2D)}" fill="url(#paper-${kind})" stroke="#725237" stroke-width=".55"/>`).join('')+solid.hinges.map(h=>`<line x1="${h.edge[0][0]}" y1="${h.edge[0][1]}" x2="${h.edge[1][0]}" y2="${h.edge[1][1]}" stroke="#62472c" stroke-width=".8" stroke-dasharray="3 2"/>`).join('');
+ const faces=solid.faces.map(f=>{const world=f.points2D.map(p=>foldPoint(solid,f.id,[...p,0],t));const a=world[1].map((v,i)=>v-world[0][i]),b=world[2].map((v,i)=>v-world[0][i]);const n=[a[1]*b[2]-a[2]*b[1],a[2]*b[0]-a[0]*b[2],a[0]*b[1]-a[1]*b[0]],len=Math.hypot(...n);const shade=.64+.36*Math.abs((-n[0]*.4-n[1]*.5+n[2]*.77)/len);return {...f,shade,projected:world.map(camera)};});
+ const ps=faces.flatMap(f=>f.projected),minX=Math.min(...ps.map(p=>p[0])),maxX=Math.max(...ps.map(p=>p[0])),minY=Math.min(...ps.map(p=>p[1])),maxY=Math.max(...ps.map(p=>p[1]));
+ const scale=Math.min(390/(maxX-minX),325/(maxY-minY)),cx=(minX+maxX)/2,cy=(minY+maxY)/2;
+ faces.sort((a,b)=>a.projected.reduce((s,p)=>s+p[2],0)/a.projected.length-b.projected.reduce((s,p)=>s+p[2],0)/b.projected.length);
+ document.querySelector('#folded').innerHTML=pattern(kind)+faces.map(f=>{const points=f.projected.map(p=>[250+(p[0]-cx)*scale,215+(p[1]-cy)*scale]);return `<polygon points="${coords(points)}" fill="url(#paper-${kind})" stroke="#654322" stroke-width="1.1" style="filter:brightness(${f.shade})"/>`;}).join('');
+ document.querySelector('#progress').value=`${Math.round(t*100)}%`;
+ document.querySelector('#counts').textContent=`${solid.counts.faces} mathematical faces · ${solid.counts.edges} closed edges · ${solid.counts.vertices} vertices. Glue tabs are assembly pieces and are not counted as faces.`;
+ document.querySelector('#parts').innerHTML=solid.faces.map(f=>`<a href="${f.front}">Face ${f.id+1} front</a><a href="${f.back}">reverse</a>`).join('');
+}
+selector.addEventListener('change',()=>{slider.value=0;render()});slider.addEventListener('input',render);
+for(const [id,t] of [['flat',0],['half',.5],['closed',1]])document.querySelector('#'+id).addEventListener('click',()=>{slider.value=t;render()});
+render();
+</script></html>

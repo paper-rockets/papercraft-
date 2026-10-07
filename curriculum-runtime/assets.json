@@ -1,0 +1,2347 @@
+{
+  "version": 1,
+  "count": 103,
+  "textureSource": "folding-paper-kit-v1/materials; existing generated photographic paper",
+  "assets": [
+    {
+      "family": "base-ten",
+      "name": "unit",
+      "file": "base-ten/unit.svg",
+      "viewBox": [
+        0,
+        0,
+        30,
+        30
+      ],
+      "anchor": [
+        15,
+        15
+      ]
+    },
+    {
+      "family": "base-ten",
+      "name": "ten-rod",
+      "file": "base-ten/ten-rod.svg",
+      "viewBox": [
+        0,
+        0,
+        30,
+        210
+      ],
+      "anchor": [
+        15,
+        105
+      ],
+      "units": 10,
+      "cellSize": 20
+    },
+    {
+      "family": "base-ten",
+      "name": "hundred-flat",
+      "file": "base-ten/hundred-flat.svg",
+      "viewBox": [
+        0,
+        0,
+        210,
+        210
+      ],
+      "anchor": [
+        105,
+        105
+      ],
+      "units": 100,
+      "rows": 10,
+      "columns": 10
+    },
+    {
+      "family": "base-ten",
+      "name": "thousand-cube",
+      "file": "base-ten/thousand-cube.svg",
+      "viewBox": [
+        0,
+        0,
+        270,
+        270
+      ],
+      "anchor": [
+        135,
+        135
+      ],
+      "units": 1000,
+      "divisionsPerEdge": 10
+    },
+    {
+      "family": "symmetry",
+      "name": "left-piece",
+      "file": "symmetry/left-piece.svg",
+      "viewBox": [
+        0,
+        0,
+        210,
+        210
+      ],
+      "anchor": [
+        105,
+        105
+      ],
+      "hinge": [
+        [
+          105,
+          5
+        ],
+        [
+          105,
+          205
+        ]
+      ]
+    },
+    {
+      "family": "symmetry",
+      "name": "right-piece",
+      "file": "symmetry/right-piece.svg",
+      "viewBox": [
+        0,
+        0,
+        210,
+        210
+      ],
+      "anchor": [
+        105,
+        105
+      ],
+      "hinge": [
+        [
+          105,
+          5
+        ],
+        [
+          105,
+          205
+        ]
+      ]
+    },
+    {
+      "family": "symmetry",
+      "name": "triangle-piece",
+      "file": "symmetry/triangle-piece.svg",
+      "viewBox": [
+        0,
+        0,
+        210,
+        210
+      ],
+      "anchor": [
+        105,
+        105
+      ],
+      "hinge": null
+    },
+    {
+      "family": "symmetry",
+      "name": "diamond-piece",
+      "file": "symmetry/diamond-piece.svg",
+      "viewBox": [
+        0,
+        0,
+        210,
+        210
+      ],
+      "anchor": [
+        105,
+        105
+      ],
+      "hinge": null
+    },
+    {
+      "family": "symmetry",
+      "name": "mirror-line",
+      "file": "symmetry/mirror-line.svg",
+      "viewBox": [
+        0,
+        0,
+        12,
+        220
+      ],
+      "anchor": [
+        6,
+        110
+      ]
+    },
+    {
+      "family": "symmetry",
+      "name": "frieze-triangle",
+      "file": "symmetry/frieze-triangle.svg",
+      "viewBox": [
+        0,
+        0,
+        110,
+        110
+      ],
+      "anchor": [
+        55,
+        55
+      ]
+    },
+    {
+      "family": "symmetry",
+      "name": "frieze-square",
+      "file": "symmetry/frieze-square.svg",
+      "viewBox": [
+        0,
+        0,
+        110,
+        110
+      ],
+      "anchor": [
+        55,
+        55
+      ]
+    },
+    {
+      "family": "symmetry",
+      "name": "frieze-arrow",
+      "file": "symmetry/frieze-arrow.svg",
+      "viewBox": [
+        0,
+        0,
+        110,
+        110
+      ],
+      "anchor": [
+        55,
+        55
+      ]
+    },
+    {
+      "family": "coordinates",
+      "name": "horizontal-axis",
+      "file": "coordinates/horizontal-axis.svg",
+      "viewBox": [
+        0,
+        0,
+        420,
+        20
+      ],
+      "anchor": [
+        210,
+        10
+      ]
+    },
+    {
+      "family": "coordinates",
+      "name": "vertical-axis",
+      "file": "coordinates/vertical-axis.svg",
+      "viewBox": [
+        0,
+        0,
+        20,
+        420
+      ],
+      "anchor": [
+        10,
+        210
+      ]
+    },
+    {
+      "family": "coordinates",
+      "name": "origin",
+      "file": "coordinates/origin.svg",
+      "viewBox": [
+        0,
+        0,
+        20,
+        20
+      ],
+      "anchor": [
+        10,
+        10
+      ]
+    },
+    {
+      "family": "coordinates",
+      "name": "tick",
+      "file": "coordinates/tick.svg",
+      "viewBox": [
+        0,
+        0,
+        10,
+        20
+      ],
+      "anchor": [
+        5,
+        10
+      ]
+    },
+    {
+      "family": "coordinates",
+      "name": "point",
+      "file": "coordinates/point.svg",
+      "viewBox": [
+        0,
+        0,
+        30,
+        30
+      ],
+      "anchor": [
+        15,
+        15
+      ]
+    },
+    {
+      "family": "polygons",
+      "name": "triangle",
+      "file": "polygons/triangle.svg",
+      "viewBox": [
+        0,
+        0,
+        160,
+        160
+      ],
+      "anchor": [
+        80,
+        80
+      ],
+      "vertices": [
+        [
+          5,
+          140
+        ],
+        [
+          80,
+          5
+        ],
+        [
+          155,
+          140
+        ]
+      ],
+      "edgeCount": 3
+    },
+    {
+      "family": "polygons",
+      "name": "quadrilateral",
+      "file": "polygons/quadrilateral.svg",
+      "viewBox": [
+        0,
+        0,
+        160,
+        160
+      ],
+      "anchor": [
+        80,
+        80
+      ],
+      "vertices": [
+        [
+          5,
+          5
+        ],
+        [
+          130,
+          20
+        ],
+        [
+          155,
+          140
+        ],
+        [
+          30,
+          155
+        ]
+      ],
+      "edgeCount": 4
+    },
+    {
+      "family": "polygons",
+      "name": "pentagon",
+      "file": "polygons/pentagon.svg",
+      "viewBox": [
+        0,
+        0,
+        160,
+        160
+      ],
+      "anchor": [
+        80,
+        80
+      ],
+      "vertices": [
+        [
+          80,
+          5
+        ],
+        [
+          155,
+          60
+        ],
+        [
+          130,
+          150
+        ],
+        [
+          30,
+          150
+        ],
+        [
+          5,
+          60
+        ]
+      ],
+      "edgeCount": 5
+    },
+    {
+      "family": "polygons",
+      "name": "hexagon",
+      "file": "polygons/hexagon.svg",
+      "viewBox": [
+        0,
+        0,
+        160,
+        160
+      ],
+      "anchor": [
+        80,
+        80
+      ],
+      "vertices": [
+        [
+          45,
+          5
+        ],
+        [
+          115,
+          5
+        ],
+        [
+          155,
+          80
+        ],
+        [
+          115,
+          155
+        ],
+        [
+          45,
+          155
+        ],
+        [
+          5,
+          80
+        ]
+      ],
+      "edgeCount": 6
+    },
+    {
+      "family": "polygons",
+      "name": "concave",
+      "file": "polygons/concave.svg",
+      "viewBox": [
+        0,
+        0,
+        160,
+        160
+      ],
+      "anchor": [
+        80,
+        80
+      ],
+      "vertices": [
+        [
+          5,
+          5
+        ],
+        [
+          155,
+          5
+        ],
+        [
+          80,
+          80
+        ],
+        [
+          155,
+          155
+        ],
+        [
+          5,
+          155
+        ]
+      ],
+      "edgeCount": 5
+    },
+    {
+      "family": "polygons",
+      "name": "edge-highlight",
+      "file": "polygons/edge-highlight.svg",
+      "viewBox": [
+        0,
+        0,
+        110,
+        12
+      ],
+      "anchor": [
+        55,
+        6
+      ]
+    },
+    {
+      "family": "polygons",
+      "name": "vertex-highlight",
+      "file": "polygons/vertex-highlight.svg",
+      "viewBox": [
+        0,
+        0,
+        20,
+        20
+      ],
+      "anchor": [
+        10,
+        10
+      ]
+    },
+    {
+      "family": "fractions",
+      "name": "pizza-2-part-1",
+      "file": "fractions/pizza-2-part-1.svg",
+      "viewBox": [
+        0,
+        0,
+        1448,
+        1086
+      ],
+      "anchor": [
+        724,
+        543
+      ],
+      "denominator": 2,
+      "index": 0,
+      "angleDegrees": 180,
+      "pivot": [
+        724,
+        531
+      ],
+      "registeredCanvas": true
+    },
+    {
+      "family": "fractions",
+      "name": "pizza-2-part-2",
+      "file": "fractions/pizza-2-part-2.svg",
+      "viewBox": [
+        0,
+        0,
+        1448,
+        1086
+      ],
+      "anchor": [
+        724,
+        543
+      ],
+      "denominator": 2,
+      "index": 1,
+      "angleDegrees": 180,
+      "pivot": [
+        724,
+        531
+      ],
+      "registeredCanvas": true
+    },
+    {
+      "family": "fractions",
+      "name": "equal-whole-guide-2",
+      "file": "fractions/equal-whole-guide-2.svg",
+      "viewBox": [
+        0,
+        0,
+        410,
+        60
+      ],
+      "anchor": [
+        205,
+        30
+      ],
+      "denominator": 2,
+      "wholeWidth": 400
+    },
+    {
+      "family": "fractions",
+      "name": "pizza-3-part-1",
+      "file": "fractions/pizza-3-part-1.svg",
+      "viewBox": [
+        0,
+        0,
+        1448,
+        1086
+      ],
+      "anchor": [
+        724,
+        543
+      ],
+      "denominator": 3,
+      "index": 0,
+      "angleDegrees": 120,
+      "pivot": [
+        724,
+        531
+      ],
+      "registeredCanvas": true
+    },
+    {
+      "family": "fractions",
+      "name": "pizza-3-part-2",
+      "file": "fractions/pizza-3-part-2.svg",
+      "viewBox": [
+        0,
+        0,
+        1448,
+        1086
+      ],
+      "anchor": [
+        724,
+        543
+      ],
+      "denominator": 3,
+      "index": 1,
+      "angleDegrees": 120,
+      "pivot": [
+        724,
+        531
+      ],
+      "registeredCanvas": true
+    },
+    {
+      "family": "fractions",
+      "name": "pizza-3-part-3",
+      "file": "fractions/pizza-3-part-3.svg",
+      "viewBox": [
+        0,
+        0,
+        1448,
+        1086
+      ],
+      "anchor": [
+        724,
+        543
+      ],
+      "denominator": 3,
+      "index": 2,
+      "angleDegrees": 120,
+      "pivot": [
+        724,
+        531
+      ],
+      "registeredCanvas": true
+    },
+    {
+      "family": "fractions",
+      "name": "equal-whole-guide-3",
+      "file": "fractions/equal-whole-guide-3.svg",
+      "viewBox": [
+        0,
+        0,
+        410,
+        60
+      ],
+      "anchor": [
+        205,
+        30
+      ],
+      "denominator": 3,
+      "wholeWidth": 400
+    },
+    {
+      "family": "fractions",
+      "name": "pizza-4-part-1",
+      "file": "fractions/pizza-4-part-1.svg",
+      "viewBox": [
+        0,
+        0,
+        1448,
+        1086
+      ],
+      "anchor": [
+        724,
+        543
+      ],
+      "denominator": 4,
+      "index": 0,
+      "angleDegrees": 90,
+      "pivot": [
+        724,
+        531
+      ],
+      "registeredCanvas": true
+    },
+    {
+      "family": "fractions",
+      "name": "pizza-4-part-2",
+      "file": "fractions/pizza-4-part-2.svg",
+      "viewBox": [
+        0,
+        0,
+        1448,
+        1086
+      ],
+      "anchor": [
+        724,
+        543
+      ],
+      "denominator": 4,
+      "index": 1,
+      "angleDegrees": 90,
+      "pivot": [
+        724,
+        531
+      ],
+      "registeredCanvas": true
+    },
+    {
+      "family": "fractions",
+      "name": "pizza-4-part-3",
+      "file": "fractions/pizza-4-part-3.svg",
+      "viewBox": [
+        0,
+        0,
+        1448,
+        1086
+      ],
+      "anchor": [
+        724,
+        543
+      ],
+      "denominator": 4,
+      "index": 2,
+      "angleDegrees": 90,
+      "pivot": [
+        724,
+        531
+      ],
+      "registeredCanvas": true
+    },
+    {
+      "family": "fractions",
+      "name": "pizza-4-part-4",
+      "file": "fractions/pizza-4-part-4.svg",
+      "viewBox": [
+        0,
+        0,
+        1448,
+        1086
+      ],
+      "anchor": [
+        724,
+        543
+      ],
+      "denominator": 4,
+      "index": 3,
+      "angleDegrees": 90,
+      "pivot": [
+        724,
+        531
+      ],
+      "registeredCanvas": true
+    },
+    {
+      "family": "fractions",
+      "name": "equal-whole-guide-4",
+      "file": "fractions/equal-whole-guide-4.svg",
+      "viewBox": [
+        0,
+        0,
+        410,
+        60
+      ],
+      "anchor": [
+        205,
+        30
+      ],
+      "denominator": 4,
+      "wholeWidth": 400
+    },
+    {
+      "family": "fractions",
+      "name": "pizza-6-part-1",
+      "file": "fractions/pizza-6-part-1.svg",
+      "viewBox": [
+        0,
+        0,
+        1448,
+        1086
+      ],
+      "anchor": [
+        724,
+        543
+      ],
+      "denominator": 6,
+      "index": 0,
+      "angleDegrees": 60,
+      "pivot": [
+        724,
+        531
+      ],
+      "registeredCanvas": true
+    },
+    {
+      "family": "fractions",
+      "name": "pizza-6-part-2",
+      "file": "fractions/pizza-6-part-2.svg",
+      "viewBox": [
+        0,
+        0,
+        1448,
+        1086
+      ],
+      "anchor": [
+        724,
+        543
+      ],
+      "denominator": 6,
+      "index": 1,
+      "angleDegrees": 60,
+      "pivot": [
+        724,
+        531
+      ],
+      "registeredCanvas": true
+    },
+    {
+      "family": "fractions",
+      "name": "pizza-6-part-3",
+      "file": "fractions/pizza-6-part-3.svg",
+      "viewBox": [
+        0,
+        0,
+        1448,
+        1086
+      ],
+      "anchor": [
+        724,
+        543
+      ],
+      "denominator": 6,
+      "index": 2,
+      "angleDegrees": 60,
+      "pivot": [
+        724,
+        531
+      ],
+      "registeredCanvas": true
+    },
+    {
+      "family": "fractions",
+      "name": "pizza-6-part-4",
+      "file": "fractions/pizza-6-part-4.svg",
+      "viewBox": [
+        0,
+        0,
+        1448,
+        1086
+      ],
+      "anchor": [
+        724,
+        543
+      ],
+      "denominator": 6,
+      "index": 3,
+      "angleDegrees": 60,
+      "pivot": [
+        724,
+        531
+      ],
+      "registeredCanvas": true
+    },
+    {
+      "family": "fractions",
+      "name": "pizza-6-part-5",
+      "file": "fractions/pizza-6-part-5.svg",
+      "viewBox": [
+        0,
+        0,
+        1448,
+        1086
+      ],
+      "anchor": [
+        724,
+        543
+      ],
+      "denominator": 6,
+      "index": 4,
+      "angleDegrees": 60,
+      "pivot": [
+        724,
+        531
+      ],
+      "registeredCanvas": true
+    },
+    {
+      "family": "fractions",
+      "name": "pizza-6-part-6",
+      "file": "fractions/pizza-6-part-6.svg",
+      "viewBox": [
+        0,
+        0,
+        1448,
+        1086
+      ],
+      "anchor": [
+        724,
+        543
+      ],
+      "denominator": 6,
+      "index": 5,
+      "angleDegrees": 60,
+      "pivot": [
+        724,
+        531
+      ],
+      "registeredCanvas": true
+    },
+    {
+      "family": "fractions",
+      "name": "equal-whole-guide-6",
+      "file": "fractions/equal-whole-guide-6.svg",
+      "viewBox": [
+        0,
+        0,
+        410,
+        60
+      ],
+      "anchor": [
+        205,
+        30
+      ],
+      "denominator": 6,
+      "wholeWidth": 400
+    },
+    {
+      "family": "fractions",
+      "name": "pizza-8-part-1",
+      "file": "fractions/pizza-8-part-1.svg",
+      "viewBox": [
+        0,
+        0,
+        1448,
+        1086
+      ],
+      "anchor": [
+        724,
+        543
+      ],
+      "denominator": 8,
+      "index": 0,
+      "angleDegrees": 45,
+      "pivot": [
+        724,
+        531
+      ],
+      "registeredCanvas": true
+    },
+    {
+      "family": "fractions",
+      "name": "pizza-8-part-2",
+      "file": "fractions/pizza-8-part-2.svg",
+      "viewBox": [
+        0,
+        0,
+        1448,
+        1086
+      ],
+      "anchor": [
+        724,
+        543
+      ],
+      "denominator": 8,
+      "index": 1,
+      "angleDegrees": 45,
+      "pivot": [
+        724,
+        531
+      ],
+      "registeredCanvas": true
+    },
+    {
+      "family": "fractions",
+      "name": "pizza-8-part-3",
+      "file": "fractions/pizza-8-part-3.svg",
+      "viewBox": [
+        0,
+        0,
+        1448,
+        1086
+      ],
+      "anchor": [
+        724,
+        543
+      ],
+      "denominator": 8,
+      "index": 2,
+      "angleDegrees": 45,
+      "pivot": [
+        724,
+        531
+      ],
+      "registeredCanvas": true
+    },
+    {
+      "family": "fractions",
+      "name": "pizza-8-part-4",
+      "file": "fractions/pizza-8-part-4.svg",
+      "viewBox": [
+        0,
+        0,
+        1448,
+        1086
+      ],
+      "anchor": [
+        724,
+        543
+      ],
+      "denominator": 8,
+      "index": 3,
+      "angleDegrees": 45,
+      "pivot": [
+        724,
+        531
+      ],
+      "registeredCanvas": true
+    },
+    {
+      "family": "fractions",
+      "name": "pizza-8-part-5",
+      "file": "fractions/pizza-8-part-5.svg",
+      "viewBox": [
+        0,
+        0,
+        1448,
+        1086
+      ],
+      "anchor": [
+        724,
+        543
+      ],
+      "denominator": 8,
+      "index": 4,
+      "angleDegrees": 45,
+      "pivot": [
+        724,
+        531
+      ],
+      "registeredCanvas": true
+    },
+    {
+      "family": "fractions",
+      "name": "pizza-8-part-6",
+      "file": "fractions/pizza-8-part-6.svg",
+      "viewBox": [
+        0,
+        0,
+        1448,
+        1086
+      ],
+      "anchor": [
+        724,
+        543
+      ],
+      "denominator": 8,
+      "index": 5,
+      "angleDegrees": 45,
+      "pivot": [
+        724,
+        531
+      ],
+      "registeredCanvas": true
+    },
+    {
+      "family": "fractions",
+      "name": "pizza-8-part-7",
+      "file": "fractions/pizza-8-part-7.svg",
+      "viewBox": [
+        0,
+        0,
+        1448,
+        1086
+      ],
+      "anchor": [
+        724,
+        543
+      ],
+      "denominator": 8,
+      "index": 6,
+      "angleDegrees": 45,
+      "pivot": [
+        724,
+        531
+      ],
+      "registeredCanvas": true
+    },
+    {
+      "family": "fractions",
+      "name": "pizza-8-part-8",
+      "file": "fractions/pizza-8-part-8.svg",
+      "viewBox": [
+        0,
+        0,
+        1448,
+        1086
+      ],
+      "anchor": [
+        724,
+        543
+      ],
+      "denominator": 8,
+      "index": 7,
+      "angleDegrees": 45,
+      "pivot": [
+        724,
+        531
+      ],
+      "registeredCanvas": true
+    },
+    {
+      "family": "fractions",
+      "name": "equal-whole-guide-8",
+      "file": "fractions/equal-whole-guide-8.svg",
+      "viewBox": [
+        0,
+        0,
+        410,
+        60
+      ],
+      "anchor": [
+        205,
+        30
+      ],
+      "denominator": 8,
+      "wholeWidth": 400
+    },
+    {
+      "family": "decimals",
+      "name": "tenths-header",
+      "file": "decimals/tenths-header.svg",
+      "viewBox": [
+        0,
+        0,
+        210,
+        70
+      ],
+      "anchor": [
+        105,
+        35
+      ],
+      "textSafeRect": [
+        18,
+        15,
+        174,
+        40
+      ]
+    },
+    {
+      "family": "decimals",
+      "name": "hundredths-header",
+      "file": "decimals/hundredths-header.svg",
+      "viewBox": [
+        0,
+        0,
+        210,
+        70
+      ],
+      "anchor": [
+        105,
+        35
+      ],
+      "textSafeRect": [
+        18,
+        15,
+        174,
+        40
+      ]
+    },
+    {
+      "family": "decimals",
+      "name": "whole-header",
+      "file": "decimals/whole-header.svg",
+      "viewBox": [
+        0,
+        0,
+        210,
+        70
+      ],
+      "anchor": [
+        105,
+        35
+      ],
+      "textSafeRect": [
+        18,
+        15,
+        174,
+        40
+      ]
+    },
+    {
+      "family": "decimals",
+      "name": "fractional-header",
+      "file": "decimals/fractional-header.svg",
+      "viewBox": [
+        0,
+        0,
+        210,
+        70
+      ],
+      "anchor": [
+        105,
+        35
+      ],
+      "textSafeRect": [
+        18,
+        15,
+        174,
+        40
+      ]
+    },
+    {
+      "family": "decimals",
+      "name": "decimal-point",
+      "file": "decimals/decimal-point.svg",
+      "viewBox": [
+        0,
+        0,
+        30,
+        30
+      ],
+      "anchor": [
+        15,
+        15
+      ]
+    },
+    {
+      "family": "decimals",
+      "name": "tenths-strip",
+      "file": "decimals/tenths-strip.svg",
+      "viewBox": [
+        0,
+        0,
+        210,
+        30
+      ],
+      "anchor": [
+        105,
+        15
+      ],
+      "divisions": 10
+    },
+    {
+      "family": "decimals",
+      "name": "hundredths-square",
+      "file": "decimals/hundredths-square.svg",
+      "viewBox": [
+        0,
+        0,
+        210,
+        210
+      ],
+      "anchor": [
+        105,
+        105
+      ],
+      "divisions": 100
+    },
+    {
+      "family": "length",
+      "name": "ruler-markings",
+      "file": "length/ruler-markings.svg",
+      "viewBox": [
+        0,
+        0,
+        510,
+        50
+      ],
+      "anchor": [
+        255,
+        25
+      ],
+      "tickSpacing": 10,
+      "labelsInCode": true
+    },
+    {
+      "family": "length",
+      "name": "trace-segment",
+      "file": "length/trace-segment.svg",
+      "viewBox": [
+        0,
+        0,
+        210,
+        14
+      ],
+      "anchor": [
+        105,
+        7
+      ],
+      "stretchAlongX": true
+    },
+    {
+      "family": "length",
+      "name": "trace-corner",
+      "file": "length/trace-corner.svg",
+      "viewBox": [
+        0,
+        0,
+        40,
+        40
+      ],
+      "anchor": [
+        20,
+        20
+      ]
+    },
+    {
+      "family": "data",
+      "name": "bar-cream",
+      "file": "data/bar-cream.svg",
+      "viewBox": [
+        0,
+        0,
+        50,
+        210
+      ],
+      "anchor": [
+        25,
+        105
+      ],
+      "scaleAlongY": true,
+      "zeroAtBottom": 205
+    },
+    {
+      "family": "data",
+      "name": "bar-teal",
+      "file": "data/bar-teal.svg",
+      "viewBox": [
+        0,
+        0,
+        50,
+        210
+      ],
+      "anchor": [
+        25,
+        105
+      ],
+      "scaleAlongY": true,
+      "zeroAtBottom": 205
+    },
+    {
+      "family": "data",
+      "name": "bar-mustard",
+      "file": "data/bar-mustard.svg",
+      "viewBox": [
+        0,
+        0,
+        50,
+        210
+      ],
+      "anchor": [
+        25,
+        105
+      ],
+      "scaleAlongY": true,
+      "zeroAtBottom": 205
+    },
+    {
+      "family": "data",
+      "name": "category-label",
+      "file": "data/category-label.svg",
+      "viewBox": [
+        0,
+        0,
+        160,
+        55
+      ],
+      "anchor": [
+        80,
+        27.5
+      ],
+      "textSafeRect": [
+        15,
+        12,
+        130,
+        30
+      ]
+    },
+    {
+      "family": "data",
+      "name": "axis",
+      "file": "data/axis.svg",
+      "viewBox": [
+        0,
+        0,
+        420,
+        20
+      ],
+      "anchor": [
+        210,
+        10
+      ]
+    },
+    {
+      "family": "data",
+      "name": "tick",
+      "file": "data/tick.svg",
+      "viewBox": [
+        0,
+        0,
+        12,
+        20
+      ],
+      "anchor": [
+        6,
+        10
+      ]
+    },
+    {
+      "family": "area",
+      "name": "square",
+      "file": "area/square.svg",
+      "viewBox": [
+        0,
+        0,
+        110,
+        110
+      ],
+      "anchor": [
+        55,
+        55
+      ],
+      "squareArea": 1
+    },
+    {
+      "family": "area",
+      "name": "half-square-a",
+      "file": "area/half-square-a.svg",
+      "viewBox": [
+        0,
+        0,
+        110,
+        110
+      ],
+      "anchor": [
+        55,
+        55
+      ],
+      "squareArea": 0.5
+    },
+    {
+      "family": "area",
+      "name": "half-square-b",
+      "file": "area/half-square-b.svg",
+      "viewBox": [
+        0,
+        0,
+        110,
+        110
+      ],
+      "anchor": [
+        55,
+        55
+      ],
+      "squareArea": 0.5
+    },
+    {
+      "family": "number-properties",
+      "name": "line-strip",
+      "file": "number-properties/line-strip.svg",
+      "viewBox": [
+        0,
+        0,
+        420,
+        45
+      ],
+      "anchor": [
+        210,
+        22.5
+      ]
+    },
+    {
+      "family": "number-properties",
+      "name": "endpoint",
+      "file": "number-properties/endpoint.svg",
+      "viewBox": [
+        0,
+        0,
+        20,
+        30
+      ],
+      "anchor": [
+        10,
+        15
+      ]
+    },
+    {
+      "family": "number-properties",
+      "name": "midpoint",
+      "file": "number-properties/midpoint.svg",
+      "viewBox": [
+        0,
+        0,
+        20,
+        30
+      ],
+      "anchor": [
+        10,
+        15
+      ]
+    },
+    {
+      "family": "number-properties",
+      "name": "flag",
+      "file": "number-properties/flag.svg",
+      "viewBox": [
+        0,
+        0,
+        50,
+        70
+      ],
+      "anchor": [
+        25,
+        35
+      ]
+    },
+    {
+      "family": "number-properties",
+      "name": "pair-tray",
+      "file": "number-properties/pair-tray.svg",
+      "viewBox": [
+        0,
+        0,
+        110,
+        60
+      ],
+      "anchor": [
+        55,
+        30
+      ],
+      "slots": 2
+    },
+    {
+      "family": "number-properties",
+      "name": "factor-frame",
+      "file": "number-properties/factor-frame.svg",
+      "viewBox": [
+        0,
+        0,
+        210,
+        210
+      ],
+      "anchor": [
+        105,
+        105
+      ],
+      "rowsAndColumnsInCode": true
+    },
+    {
+      "family": "combinations",
+      "name": "branch",
+      "file": "combinations/branch.svg",
+      "viewBox": [
+        0,
+        0,
+        210,
+        110
+      ],
+      "anchor": [
+        105,
+        55
+      ],
+      "root": [
+        5,
+        55
+      ],
+      "ends": [
+        [
+          205,
+          5
+        ],
+        [
+          205,
+          105
+        ]
+      ]
+    },
+    {
+      "family": "combinations",
+      "name": "connector",
+      "file": "combinations/connector.svg",
+      "viewBox": [
+        0,
+        0,
+        210,
+        20
+      ],
+      "anchor": [
+        105,
+        10
+      ]
+    },
+    {
+      "family": "combinations",
+      "name": "bracket",
+      "file": "combinations/bracket.svg",
+      "viewBox": [
+        0,
+        0,
+        30,
+        120
+      ],
+      "anchor": [
+        15,
+        60
+      ]
+    },
+    {
+      "family": "arithmetic",
+      "name": "plus",
+      "file": "arithmetic/plus.svg",
+      "viewBox": [
+        0,
+        0,
+        60,
+        60
+      ],
+      "anchor": [
+        30,
+        30
+      ]
+    },
+    {
+      "family": "arithmetic",
+      "name": "minus",
+      "file": "arithmetic/minus.svg",
+      "viewBox": [
+        0,
+        0,
+        60,
+        60
+      ],
+      "anchor": [
+        30,
+        30
+      ]
+    },
+    {
+      "family": "arithmetic",
+      "name": "equals",
+      "file": "arithmetic/equals.svg",
+      "viewBox": [
+        0,
+        0,
+        60,
+        60
+      ],
+      "anchor": [
+        30,
+        30
+      ]
+    },
+    {
+      "family": "arithmetic",
+      "name": "multiply",
+      "file": "arithmetic/multiply.svg",
+      "viewBox": [
+        0,
+        0,
+        60,
+        60
+      ],
+      "anchor": [
+        30,
+        30
+      ]
+    },
+    {
+      "family": "arithmetic",
+      "name": "exchange-arrow",
+      "file": "arithmetic/exchange-arrow.svg",
+      "viewBox": [
+        0,
+        0,
+        150,
+        50
+      ],
+      "anchor": [
+        75,
+        25
+      ]
+    },
+    {
+      "family": "arithmetic",
+      "name": "group-frame",
+      "file": "arithmetic/group-frame.svg",
+      "viewBox": [
+        0,
+        0,
+        210,
+        160
+      ],
+      "anchor": [
+        105,
+        80
+      ]
+    },
+    {
+      "family": "solids",
+      "name": "square-prism-face-1",
+      "file": "solids/square-prism-face-1.svg",
+      "viewBox": [
+        0,
+        0,
+        300,
+        270
+      ],
+      "anchor": [
+        150,
+        135
+      ],
+      "solid": "square-prism",
+      "faceIndex": 0,
+      "vertices3D": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          100,
+          0
+        ],
+        [
+          100,
+          100,
+          0
+        ],
+        [
+          100,
+          0,
+          0
+        ]
+      ],
+      "registeredCanvas": true
+    },
+    {
+      "family": "solids",
+      "name": "square-prism-face-2",
+      "file": "solids/square-prism-face-2.svg",
+      "viewBox": [
+        0,
+        0,
+        300,
+        270
+      ],
+      "anchor": [
+        150,
+        135
+      ],
+      "solid": "square-prism",
+      "faceIndex": 1,
+      "vertices3D": [
+        [
+          0,
+          0,
+          100
+        ],
+        [
+          100,
+          0,
+          100
+        ],
+        [
+          100,
+          100,
+          100
+        ],
+        [
+          0,
+          100,
+          100
+        ]
+      ],
+      "registeredCanvas": true
+    },
+    {
+      "family": "solids",
+      "name": "square-prism-face-3",
+      "file": "solids/square-prism-face-3.svg",
+      "viewBox": [
+        0,
+        0,
+        300,
+        270
+      ],
+      "anchor": [
+        150,
+        135
+      ],
+      "solid": "square-prism",
+      "faceIndex": 2,
+      "vertices3D": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          100,
+          0,
+          0
+        ],
+        [
+          100,
+          0,
+          100
+        ],
+        [
+          0,
+          0,
+          100
+        ]
+      ],
+      "registeredCanvas": true
+    },
+    {
+      "family": "solids",
+      "name": "square-prism-face-4",
+      "file": "solids/square-prism-face-4.svg",
+      "viewBox": [
+        0,
+        0,
+        300,
+        270
+      ],
+      "anchor": [
+        150,
+        135
+      ],
+      "solid": "square-prism",
+      "faceIndex": 3,
+      "vertices3D": [
+        [
+          100,
+          0,
+          0
+        ],
+        [
+          100,
+          100,
+          0
+        ],
+        [
+          100,
+          100,
+          100
+        ],
+        [
+          100,
+          0,
+          100
+        ]
+      ],
+      "registeredCanvas": true
+    },
+    {
+      "family": "solids",
+      "name": "square-prism-face-5",
+      "file": "solids/square-prism-face-5.svg",
+      "viewBox": [
+        0,
+        0,
+        300,
+        270
+      ],
+      "anchor": [
+        150,
+        135
+      ],
+      "solid": "square-prism",
+      "faceIndex": 4,
+      "vertices3D": [
+        [
+          100,
+          100,
+          0
+        ],
+        [
+          0,
+          100,
+          0
+        ],
+        [
+          0,
+          100,
+          100
+        ],
+        [
+          100,
+          100,
+          100
+        ]
+      ],
+      "registeredCanvas": true
+    },
+    {
+      "family": "solids",
+      "name": "square-prism-face-6",
+      "file": "solids/square-prism-face-6.svg",
+      "viewBox": [
+        0,
+        0,
+        300,
+        270
+      ],
+      "anchor": [
+        150,
+        135
+      ],
+      "solid": "square-prism",
+      "faceIndex": 5,
+      "vertices3D": [
+        [
+          0,
+          100,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          100
+        ],
+        [
+          0,
+          100,
+          100
+        ]
+      ],
+      "registeredCanvas": true
+    },
+    {
+      "family": "solids",
+      "name": "rectangular-prism-face-1",
+      "file": "solids/rectangular-prism-face-1.svg",
+      "viewBox": [
+        0,
+        0,
+        300,
+        270
+      ],
+      "anchor": [
+        150,
+        135
+      ],
+      "solid": "rectangular-prism",
+      "faceIndex": 0,
+      "vertices3D": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          80,
+          0
+        ],
+        [
+          140,
+          80,
+          0
+        ],
+        [
+          140,
+          0,
+          0
+        ]
+      ],
+      "registeredCanvas": true
+    },
+    {
+      "family": "solids",
+      "name": "rectangular-prism-face-2",
+      "file": "solids/rectangular-prism-face-2.svg",
+      "viewBox": [
+        0,
+        0,
+        300,
+        270
+      ],
+      "anchor": [
+        150,
+        135
+      ],
+      "solid": "rectangular-prism",
+      "faceIndex": 1,
+      "vertices3D": [
+        [
+          0,
+          0,
+          70
+        ],
+        [
+          140,
+          0,
+          70
+        ],
+        [
+          140,
+          80,
+          70
+        ],
+        [
+          0,
+          80,
+          70
+        ]
+      ],
+      "registeredCanvas": true
+    },
+    {
+      "family": "solids",
+      "name": "rectangular-prism-face-3",
+      "file": "solids/rectangular-prism-face-3.svg",
+      "viewBox": [
+        0,
+        0,
+        300,
+        270
+      ],
+      "anchor": [
+        150,
+        135
+      ],
+      "solid": "rectangular-prism",
+      "faceIndex": 2,
+      "vertices3D": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          140,
+          0,
+          0
+        ],
+        [
+          140,
+          0,
+          70
+        ],
+        [
+          0,
+          0,
+          70
+        ]
+      ],
+      "registeredCanvas": true
+    },
+    {
+      "family": "solids",
+      "name": "rectangular-prism-face-4",
+      "file": "solids/rectangular-prism-face-4.svg",
+      "viewBox": [
+        0,
+        0,
+        300,
+        270
+      ],
+      "anchor": [
+        150,
+        135
+      ],
+      "solid": "rectangular-prism",
+      "faceIndex": 3,
+      "vertices3D": [
+        [
+          140,
+          0,
+          0
+        ],
+        [
+          140,
+          80,
+          0
+        ],
+        [
+          140,
+          80,
+          70
+        ],
+        [
+          140,
+          0,
+          70
+        ]
+      ],
+      "registeredCanvas": true
+    },
+    {
+      "family": "solids",
+      "name": "rectangular-prism-face-5",
+      "file": "solids/rectangular-prism-face-5.svg",
+      "viewBox": [
+        0,
+        0,
+        300,
+        270
+      ],
+      "anchor": [
+        150,
+        135
+      ],
+      "solid": "rectangular-prism",
+      "faceIndex": 4,
+      "vertices3D": [
+        [
+          140,
+          80,
+          0
+        ],
+        [
+          0,
+          80,
+          0
+        ],
+        [
+          0,
+          80,
+          70
+        ],
+        [
+          140,
+          80,
+          70
+        ]
+      ],
+      "registeredCanvas": true
+    },
+    {
+      "family": "solids",
+      "name": "rectangular-prism-face-6",
+      "file": "solids/rectangular-prism-face-6.svg",
+      "viewBox": [
+        0,
+        0,
+        300,
+        270
+      ],
+      "anchor": [
+        150,
+        135
+      ],
+      "solid": "rectangular-prism",
+      "faceIndex": 5,
+      "vertices3D": [
+        [
+          0,
+          80,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          70
+        ],
+        [
+          0,
+          80,
+          70
+        ]
+      ],
+      "registeredCanvas": true
+    },
+    {
+      "family": "solids",
+      "name": "square-pyramid-face-1",
+      "file": "solids/square-pyramid-face-1.svg",
+      "viewBox": [
+        0,
+        0,
+        300,
+        270
+      ],
+      "anchor": [
+        150,
+        135
+      ],
+      "solid": "square-pyramid",
+      "faceIndex": 0,
+      "vertices3D": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          100,
+          0
+        ],
+        [
+          100,
+          100,
+          0
+        ],
+        [
+          100,
+          0,
+          0
+        ]
+      ],
+      "registeredCanvas": true
+    },
+    {
+      "family": "solids",
+      "name": "square-pyramid-face-2",
+      "file": "solids/square-pyramid-face-2.svg",
+      "viewBox": [
+        0,
+        0,
+        300,
+        270
+      ],
+      "anchor": [
+        150,
+        135
+      ],
+      "solid": "square-pyramid",
+      "faceIndex": 1,
+      "vertices3D": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          100,
+          0,
+          0
+        ],
+        [
+          50,
+          50,
+          110
+        ]
+      ],
+      "registeredCanvas": true
+    },
+    {
+      "family": "solids",
+      "name": "square-pyramid-face-3",
+      "file": "solids/square-pyramid-face-3.svg",
+      "viewBox": [
+        0,
+        0,
+        300,
+        270
+      ],
+      "anchor": [
+        150,
+        135
+      ],
+      "solid": "square-pyramid",
+      "faceIndex": 2,
+      "vertices3D": [
+        [
+          100,
+          0,
+          0
+        ],
+        [
+          100,
+          100,
+          0
+        ],
+        [
+          50,
+          50,
+          110
+        ]
+      ],
+      "registeredCanvas": true
+    },
+    {
+      "family": "solids",
+      "name": "square-pyramid-face-4",
+      "file": "solids/square-pyramid-face-4.svg",
+      "viewBox": [
+        0,
+        0,
+        300,
+        270
+      ],
+      "anchor": [
+        150,
+        135
+      ],
+      "solid": "square-pyramid",
+      "faceIndex": 3,
+      "vertices3D": [
+        [
+          100,
+          100,
+          0
+        ],
+        [
+          0,
+          100,
+          0
+        ],
+        [
+          50,
+          50,
+          110
+        ]
+      ],
+      "registeredCanvas": true
+    },
+    {
+      "family": "solids",
+      "name": "square-pyramid-face-5",
+      "file": "solids/square-pyramid-face-5.svg",
+      "viewBox": [
+        0,
+        0,
+        300,
+        270
+      ],
+      "anchor": [
+        150,
+        135
+      ],
+      "solid": "square-pyramid",
+      "faceIndex": 4,
+      "vertices3D": [
+        [
+          0,
+          100,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          50,
+          50,
+          110
+        ]
+      ],
+      "registeredCanvas": true
+    }
+  ]
+}
